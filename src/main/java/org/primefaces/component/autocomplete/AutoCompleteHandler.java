@@ -17,8 +17,7 @@ package org.primefaces.component.autocomplete;
 
 import java.util.List;
 
-import org.primefaces.event.SelectEvent;
-
+import com.sun.facelets.tag.MetaRule;
 import com.sun.facelets.tag.MetaRuleset;
 import com.sun.facelets.tag.MethodRule;
 import com.sun.facelets.tag.jsf.ComponentConfig;
@@ -33,9 +32,10 @@ public class AutoCompleteHandler extends ComponentHandler{
 	@SuppressWarnings("unchecked")
 	protected MetaRuleset createMetaRuleset(Class type) { 
 		MetaRuleset metaRuleset = super.createMetaRuleset(type); 
+		Class[] paramList = new Class[]{String.class}; 
 		
-		metaRuleset.addRule(new MethodRule("completeMethod", List.class, new Class[]{String.class}));
-		metaRuleset.addRule(new MethodRule("selectListener", null, new Class[]{SelectEvent.class}));
+		MetaRule metaRule = new MethodRule("completeMethod", List.class, paramList); 
+		metaRuleset.addRule(metaRule);
 		
 		return metaRuleset; 
 	} 

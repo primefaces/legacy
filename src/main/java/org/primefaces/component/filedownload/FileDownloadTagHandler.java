@@ -33,24 +33,18 @@ import com.sun.facelets.tag.jsf.ComponentSupport;
 public class FileDownloadTagHandler extends TagHandler {
 	
 	private final TagAttribute value;
-	private final TagAttribute contentDisposition;
 
 	public FileDownloadTagHandler(TagConfig tagConfig) {
 		super(tagConfig);
 		this.value = getRequiredAttribute("value");
-		this.contentDisposition = getAttribute("contentDisposition");
 	}
 
 	public void apply(FaceletContext faceletContext, UIComponent parent) throws IOException, FacesException, FaceletException, ELException {
 		if (ComponentSupport.isNew(parent)) {
 			ValueExpression valueVE = value.getValueExpression(faceletContext, Object.class);
-			ValueExpression contentDispositionVE = null;
-			
-			if(contentDisposition != null)
-				contentDispositionVE= contentDisposition.getValueExpression(faceletContext, String.class);
 			
 			ActionSource actionSource = (ActionSource) parent;
-			actionSource.addActionListener(new FileDownloadActionListener(valueVE, contentDispositionVE));
+			actionSource.addActionListener(new FileDownloadActionListener(valueVE));
 		}
 	}
 }

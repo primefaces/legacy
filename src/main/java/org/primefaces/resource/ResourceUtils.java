@@ -20,15 +20,16 @@ import javax.faces.context.FacesContext;
 
 public class ResourceUtils {
 
-	public final static String VERSION_INFO = "/1.1";
+	public final static String VERSION_INFO = "/1.0.0.RC";
 	public final static String RESOURCE_FOLDER = "/META-INF/resources";
 	public final static String RESOURCE_PATTERN = "/primefaces_resource";
 	public final static String RESOURCE_VERSION_PATTERN = RESOURCE_PATTERN + VERSION_INFO;
+	public final static String CSS_RESOURCE_PATTERN = "primefaces_resource:url:";
 	
-	public static String getResourceURL(FacesContext facesContext, String resource) {	
-		String resourceURL = facesContext.getApplication().getViewHandler().getResourceURL(facesContext, RESOURCE_VERSION_PATTERN + resource);
+	public static String getResourceURL(FacesContext facesContext, String resource) {
+		String contextPath = facesContext.getExternalContext().getRequestContextPath();
 		
-		return facesContext.getExternalContext().encodeResourceURL(resourceURL);
+		return contextPath + RESOURCE_PATTERN + VERSION_INFO + resource;
 	}
 	
 	public static ResourceHolder getResourceHolder(FacesContext facesContext) {

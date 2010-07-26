@@ -16,15 +16,12 @@
 package org.primefaces.application;
 
 import java.io.IOException;
-import java.util.List;
 import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import javax.faces.FacesException;
-import javax.faces.application.FacesMessage;
 import javax.faces.application.StateManager;
-import javax.faces.application.StateManager.SerializedView;
 import javax.faces.component.ContextCallback;
 import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
@@ -37,13 +34,7 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 
 import org.primefaces.component.api.AjaxComponent;
-import org.primefaces.component.PartialViewRoot;
-import org.primefaces.context.RequestContext;
-import org.primefaces.json.JSONException;
-import org.primefaces.json.JSONObject;
 import org.primefaces.util.ApplicationUtils;
-import org.primefaces.util.ArrayUtils;
-import org.primefaces.util.Constants;
 import org.primefaces.util.RendererUtils;
 
 import com.sun.facelets.FaceletsUtils;
@@ -53,123 +44,62 @@ public class PrimeFacesPhaseListener implements PhaseListener {
 	private static final Logger logger = Logger.getLogger(PrimeFacesPhaseListener.class.getName());
 
 	public void afterPhase(PhaseEvent phaseEvent) {
-		try {
-			RequestContext.getCurrentInstance().release();
-		}catch(NullPointerException exception) {
-			logger.info("Warning: RequestContext is already null before releasing. This means you have more than one PrimeFaces jar in your classpath.");
-		}
+		//Do nothing
 	}
 	
 	public void beforePhase(PhaseEvent phaseEvent) {
 		FacesContext facesContext = phaseEvent.getFacesContext();
 		Map<String,String> params = facesContext.getExternalContext().getRequestParameterMap();
-		boolean isAjaxRequest = params.containsKey(Constants.PARTIAL_REQUEST_PARAM);
-		boolean isPartialViewProcess = params.containsKey(Constants.PARTIAL_PROCESS_PARAM) && !params.get(Constants.PARTIAL_PROCESS_PARAM).equals("@all");
-		
-		if(isPartialViewProcess) {
-			restorePartialView(facesContext);
-		}
+		String viewNamespace = ApplicationUtils.getViewNamespace(facesContext);
+		boolean isAjaxRequest = params.containsKey("primefacesAjaxRequest");
 
 		if(isAjaxRequest) {
-			try {
-				handleAjaxRequest(facesContext);
-			} catch (Exception e) {
-				throw new FacesException(e);
-			}
-		}
-	}
-	
-	private void handleAjaxRequest(FacesContext facesContext) throws IOException {
-		RequestContext requestContext = RequestContext.getCurrentInstance();
-		Map<String,String> params = facesContext.getExternalContext().getRequestParameterMap();
-		String viewNamespace = ApplicationUtils.getViewNamespace(facesContext);
-		
-		if(logger.isLoggable(Level.FINE)) {
-			logger.fine("Processing PrimeFaces ajax request");
-		}
-		
-		initPartialRenderView(facesContext);
-		
-		boolean isPPRRequest = !params.containsKey(Constants.PARTIAL_SOURCE_PARAM);
-		
-		if(isPPRRequest) {
-			String[] idsToUpdate = getIdsToUpdate(facesContext, requestContext);
+			if(logger.isLoggable(Level.FINE))
+				logger.fine("Processing PrimeFaces ajax request");
 			
-			ServletResponse response = (ServletResponse) facesContext.getExternalContext().getResponse();
-			response.setContentType("text/xml");
+			initPartialRenderView(facesContext);
 			
-			ResponseWriter writer = facesContext.getResponseWriter();
-			try {
-				writer.write("<?xml version=\"1.0\" encoding=\"" + response.getCharacterEncoding() + "\"?>");
-				writer.write("<partialResponse>");
-				
-				//Encode partial output
-				if(idsToUpdate != null) {
-					writeComponents(facesContext, idsToUpdate, viewNamespace);
+			boolean isPPRRequest = !params.containsKey("ajaxSource");
+			
+			if(isPPRRequest) {
+				String updateIds = params.get("update");
+				String[] ids = null;
+				if(updateIds != null) {
+					ids = updateIds.split(",");
 				}
 				
-				//Encode viewstate
-				writeState(facesContext);
+				ServletResponse response = (ServletResponse) facesContext.getExternalContext().getResponse();
+				response.setContentType("text/xml");
 				
-				//Send request callback parameters
-				FacesMessage.Severity maximumSeverity = facesContext.getMaximumSeverity();
-				boolean validationFailed = (maximumSeverity != null && maximumSeverity.equals(FacesMessage.SEVERITY_ERROR));
-				requestContext.addCallbackParam("validationFailed", validationFailed);
-				writeCallbackParams(facesContext, requestContext);
+				ResponseWriter writer = facesContext.getResponseWriter();
+				try {
+					writer.write("<partialResponse>");
+					
+					if(ids != null) {
+						writeComponents(facesContext, ids, viewNamespace);
+					}
+					
+					writeState(facesContext);
+					
+					writer.write("</partialResponse>");
+				}catch(IOException exception) {
+					exception.printStackTrace();
+				}
+			} else {
+				String ajaxSource = params.get("ajaxSource");
 				
-				writer.write("</partialResponse>");
-			}catch(IOException exception) {
-				exception.printStackTrace();
+				boolean found = facesContext.getViewRoot().invokeOnComponent(facesContext, ajaxSource, RENDER_PARTIAL_RESPONSE);
+				
+				if(found == false) {
+		        	logger.log(Level.WARNING, "Component \"{0}\" not found to be updated partially", ajaxSource);
+				}
 			}
-		} else {
-			String ajaxSource = params.get(Constants.PARTIAL_SOURCE_PARAM);
 			
-			boolean found = facesContext.getViewRoot().invokeOnComponent(facesContext, ajaxSource, RENDER_PARTIAL_RESPONSE);
-			
-			if(found == false) {
-	        	logger.log(Level.WARNING, "Component \"{0}\" not found to be updated partially", ajaxSource);
-			}
+			facesContext.responseComplete();
 		}
-		
-		facesContext.responseComplete();
-		facesContext.getResponseWriter().close();
-	}
-	
-	private String[] getIdsToUpdate(FacesContext facesContext, RequestContext requestContext) {
-		Map<String,String> params = facesContext.getExternalContext().getRequestParameterMap();
-		String[] idsToUpdate = null;
-		String declaredUpdateIds = params.get(Constants.PARTIAL_UPDATE_PARAM);
-		List<String> dynamicUpdateIds = requestContext.getPartialUpdateTargets();
-	
-		if(declaredUpdateIds != null && !declaredUpdateIds.equals("@none")) {
-			idsToUpdate = declaredUpdateIds.split("[,\\s]+");
-		}
-		
-		if(!dynamicUpdateIds.isEmpty()) {
-			if(idsToUpdate != null)
-				idsToUpdate = ArrayUtils.concat(idsToUpdate, dynamicUpdateIds.toArray(new String[0]));
-			else
-				idsToUpdate = dynamicUpdateIds.toArray(new String[0]);
-		}
-		
-		return idsToUpdate;
 	}
 
-	/**
-	 * Restore to original for rendering
-	 */
-	private void restorePartialView(FacesContext facesContext) {
-		PartialViewRoot partialView = (PartialViewRoot) facesContext.getViewRoot();
-		
-		for (int i = 0; i < partialView.getChildCount(); i++) {
-			UIComponent kid = partialView.getChildren().get(i);
-			kid.setParent(partialView.getParents().get(i));
-		}
-		
-		facesContext.setViewRoot(partialView.getBase());	
-		partialView = null;
-	}
-	
+	//Write state to sync with client
 	private void writeState(FacesContext facesContext) throws IOException {
 		ResponseWriter writer = facesContext.getResponseWriter();
 		
@@ -177,18 +107,12 @@ public class PrimeFacesPhaseListener implements PhaseListener {
 		RendererUtils.startCDATA(facesContext);
 		
 		StateManager stateManager = facesContext.getApplication().getStateManager();
-		SerializedView serializedView = stateManager.saveSerializedView(facesContext);
-		Object stateArray[] = {serializedView.getStructure(), serializedView.getState()};
-
-		stateManager.writeState(facesContext, stateArray);
+		stateManager.writeState(facesContext, stateManager.saveView(facesContext));
 		
 		RendererUtils.endCDATA(facesContext);
 		writer.write("</state>");
 	}
 
-	/**
-	 * Write partial output of each component
-	 */
 	private void writeComponents(FacesContext facesContext, String[] ids, String namespace) throws IOException {
 		ResponseWriter writer = facesContext.getResponseWriter();
 		
@@ -221,42 +145,6 @@ public class PrimeFacesPhaseListener implements PhaseListener {
 			writer.write("</component>");
 		}
 		writer.write("</components>");
-	}
-	
-	/**
-	 * Serialize each callback parameter to json and write
-	 */
-	private void writeCallbackParams(FacesContext facesContext, RequestContext requestContext) throws IOException {
-		ResponseWriter writer = facesContext.getResponseWriter();
-		Map<String,Object> params = requestContext.getCallbackParams();
-		
-		writer.write("<callbackParams>");
-			for(String paramName : params.keySet()) {
-				
-				writer.write("<callbackParam>");
-				try {
-					Object paramValue = params.get(paramName);
-					String json = isBean(paramValue) ? "{\"" + paramName + "\":" + new JSONObject(paramValue).toString() + "}": new JSONObject().put(paramName, paramValue).toString();
-					writer.write(json);
-				} catch (JSONException e) {
-					logger.log(Level.SEVERE, "Error in serializing callback parameter \"{0}\"", paramName);
-					throw new FacesException(e.getMessage());
-				}
-				writer.write("</callbackParam>");	
-				
-			}
-		writer.write("</callbackParams>");	
-	}
-	
-	private boolean isBean(Object value) {
-		if(value == null)
-			return false;
-		
-		if(value instanceof Boolean || value instanceof String || value instanceof Number) {
-			return false;
-	    }
-		
-		return true;
 	}
 
 	public PhaseId getPhaseId() {
@@ -310,7 +198,6 @@ public class PrimeFacesPhaseListener implements PhaseListener {
 		try {
 			ServletResponse response = (ServletResponse) facesContext.getExternalContext().getResponse();
 			ServletRequest request = (ServletRequest) facesContext.getExternalContext().getRequest();
-			response.setCharacterEncoding(request.getCharacterEncoding());
 			
 			RenderKit renderKit = facesContext.getRenderKit();
 			ResponseWriter responseWriter = renderKit.createResponseWriter(response.getWriter(), null, request.getCharacterEncoding());

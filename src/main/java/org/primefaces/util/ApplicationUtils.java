@@ -23,9 +23,8 @@ public class ApplicationUtils {
 
 	private ApplicationUtils() {}
 
-	public static boolean isMyFaces(FacesContext facesContext) {
-		return (!facesContext.getExternalContext().getApplicationMap().containsKey("com.sun.faces.ApplicationAssociate")
-					|| facesContext.getExternalContext().getRequestMap().containsKey("org.apache.myfaces.trinidadinternal.InitialViewRoot"));
+	public static boolean isMojarra(FacesContext facesContext) {
+		return facesContext.getExternalContext().getApplicationMap().containsKey("com.sun.faces.ApplicationImpl");
 	}
 
 	public static String getViewNamespace(FacesContext facesContext) {

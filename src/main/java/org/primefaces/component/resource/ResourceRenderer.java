@@ -24,7 +24,6 @@ import javax.faces.context.FacesContext;
 import javax.faces.context.ResponseWriter;
 
 import org.primefaces.renderkit.CoreRenderer;
-import org.primefaces.resource.ResourceUtils;
 
 public class ResourceRenderer extends CoreRenderer {
 
@@ -35,21 +34,18 @@ public class ResourceRenderer extends CoreRenderer {
 		Resource resource = (Resource) component;
 		String resourcePath = resource.getName();
 		
-		//Check if it is already included by another component
-		for(String res : ResourceUtils.getResourceHolder(facesContext).getResources()) {
-			if(res.equalsIgnoreCase(resourcePath))
-				return;
-		}
-		
+		writer.write("\n");
 		if(resourcePath != null) {
-			writer.write("\n");
-			
 			if(resourcePath.endsWith("css"))
 				renderCSSDependency(facesContext, resourcePath);
 			else if(resourcePath.endsWith("js"))
 				renderScriptDependency(facesContext, resourcePath);
 			else
-				logger.log(Level.WARNING, "Resource \"{0}\" is queued for inclusion but it's not a supported type as only 'css' and 'js' files can be included.", resource);
+				logger.log(Level.WARNING, "Resource \"{0}\" is queued for inclusion but it's not a supported type, only 'css' and 'js' files can be included.", resource);
+				
+			writer.write("\n");
 		}
+		
+		writer.write("\n");
 	}
 }

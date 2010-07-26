@@ -5,11 +5,6 @@
 	</managed-bean>
 	
 	<lifecycle>
-		<phase-listener>org.primefaces.application.PostRestoreViewHandler</phase-listener>
 		<phase-listener>org.primefaces.application.PrimeFacesPhaseListener</phase-listener>
-		<phase-listener>org.primefaces.application.DynamicContentStreamer</phase-listener>
+		<phase-listener>org.primefaces.application.lifecycle.DynamicImageStreamer</phase-listener>
 	</lifecycle>
-	
-	<application>
-		<action-listener>org.primefaces.application.CleanupActionListener</action-listener>
-	</application>

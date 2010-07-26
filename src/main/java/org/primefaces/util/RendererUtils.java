@@ -27,20 +27,28 @@ public class RendererUtils {
 	public static void startCDATA(FacesContext facesContext) throws IOException {
 		ResponseWriter writer = facesContext.getResponseWriter();
 		
-		if(ApplicationUtils.isMyFaces(facesContext)) {
-			writer.write("<![CDATA[");
-		} else {
+		//Mojarra
+		if(ApplicationUtils.isMojarra(facesContext)) 
+		{
 			writer.startElement("CDATA", null);
+		}
+		//MyFaces
+		else {
+			writer.write("<![CDATA[");
 		}
 	}
 	
 	public static void endCDATA(FacesContext facesContext) throws IOException {
 		ResponseWriter writer = facesContext.getResponseWriter();
 		
-		if(ApplicationUtils.isMyFaces(facesContext)) {
-			writer.write("]]>");
-		} else {
+		//Mojarra
+		if(ApplicationUtils.isMojarra(facesContext)) 
+		{
 			writer.endElement("CDATA");
+		}
+		//MyFaces
+		else {
+			writer.write("]]>");
 		}
 	}
 }
