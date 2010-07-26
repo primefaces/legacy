@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE component SYSTEM "../misc/component.dtd" [
+<!ENTITY standard_uicomponent_attributes		SYSTEM "../entities/standard_uicomponent_attributes.xml">
+<!ENTITY data_component_attributes				SYSTEM "../entities/data_component_attributes.xml">
+<!ENTITY widget_var_attribute					SYSTEM "../entities/widget_var_attribute.xml">
+]>
+<component>
+	<tag>dataTable</tag>
+	<tagClass>org.primefaces.ui.component.datatable.DataTableTag</tagClass>
+	<componentClass>org.primefaces.ui.component.datatable.DataTable</componentClass>
+	<componentType>org.primefaces.ui.DataTable</componentType>
+	<componentFamily>org.primefaces</componentFamily>
+	<rendererType>org.primefaces.ui.component.DataTableRenderer</rendererType>
+	<rendererClass>org.primefaces.ui.component.datatable.DataTableRenderer</rendererClass>
+	<parent>javax.faces.component.UIData</parent>
+	<attributes>
+		&data_component_attributes;
+		&widget_var_attribute;
+		<attribute>
+			<name>paginator</name>
+			<required>false</required>
+			<type>java.lang.Boolean</type>
+			<defaultValue>false</defaultValue>
+			<description>Enables paginator, default value is false</description>
+		</attribute>
+		<attribute>
+			<name>paginatorTemplate</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+			<description>Template for the paginator layout, default value is "{FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}"</description>
+		</attribute>
+		<attribute>
+			<name>rowsPerPageTemplate</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+			<description>Template for the rowsPerPage dropdown, default value is "25,50,100"</description>
+		</attribute>
+		<attribute>
+			<name>scrollable</name>
+			<required>false</required>
+			<type>java.lang.Boolean</type>
+			<defaultValue>false</defaultValue>
+			<description>Controls scrolling, default value is false</description>
+		</attribute>
+		<attribute>
+			<name>width</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+			<description>
+				Width of the datatable
+			</description>
+		</attribute>
+		<attribute>
+			<name>height</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+			<description>
+				Height of the datatable
+			</description>
+		</attribute>
+		<attribute>
+			<name>paginatorFirstLabel</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+			<description>
+				label of the first link 
+			</description>
+		</attribute>
+		<attribute>
+			<name>paginatorPreviousLabel</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+			<description>
+				label of the previous link 
+			</description>
+		</attribute>
+		<attribute>
+			<name>paginatorNextLabel</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+			<description>
+				label of the next link 
+			</description>
+		</attribute>
+		<attribute>
+			<name>paginatorLastLabel</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+			<description>
+				label of the last link 
+			</description>
+		</attribute>
+		<attribute>
+			<name>emptyMessage</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+			<description>
+				Message to be shown when there're no records to display.
+			</description>
+		</attribute>
+	</attributes>
+	<resources>
+		<resource>
+			<name>/yui/paginator/assets/skins/sam/paginator.css</name>
+		</resource>
+		<resource>
+			<name>/yui/datatable/assets/skins/sam/datatable.css</name>
+		</resource>
+		<resource>
+			<name>/yui/utilities/utilities.js</name>
+		</resource>
+		<resource>
+			<name>/yui/datasource/datasource-min.js</name>
+		</resource>
+		<resource>
+			<name>/yui/paginator/paginator-min.js</name>
+		</resource>
+		<resource>
+			<name>/yui/datatable/datatable-min.js</name>
+		</resource>
+	</resources>
+</component>
