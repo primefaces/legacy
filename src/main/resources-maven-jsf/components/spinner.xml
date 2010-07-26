@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE component SYSTEM "../misc/component.dtd" [
+<!ENTITY standard_uicomponent_attributes		SYSTEM "../entities/standard_uicomponent_attributes.xml">
+<!ENTITY input_component_attributes				SYSTEM "../entities/input_component_attributes.xml">
+<!ENTITY widget_var_attribute					SYSTEM "../entities/widget_var_attribute.xml">
+]>
+<component>
+	<tag>spinner</tag>
+	<tagClass>org.primefaces.ui.component.spinner.SpinnerTag</tagClass>
+	<componentClass>org.primefaces.ui.component.spinner.Spinner</componentClass>
+	<componentType>org.primefaces.ui.Spinner</componentType>
+	<componentFamily>org.primefaces.ui</componentFamily>
+	<rendererType>org.primefaces.ui.component.SpinnerRenderer</rendererType>
+	<rendererClass>org.primefaces.ui.component.spinner.SpinnerRenderer</rendererClass>
+	<parent>javax.faces.component.UIInput</parent>
+	<attributes>
+		&standard_uicomponent_attributes;
+		&input_component_attributes;
+		<attribute>
+			<name>stepFactor</name>
+			<required>false</required>
+			<type>java.lang.Double</type>
+			<defaultValue>1</defaultValue>
+			<description>Stepping factor for each increment and decrement</description>
+		</attribute>
+	</attributes>
+	<resources>
+		<resource>
+			<name>/yui/utilities/utilities.js</name>
+		</resource>
+		<resource>
+			<name>/jquery/plugins/spinner/spinner.css</name>
+		</resource>
+		<resource>
+			<name>/jquery/jquery.js</name>
+		</resource>
+		<resource>
+			<name>/jquery/plugins/ui/ui.core.js</name>
+		</resource>
+		<resource>
+			<name>/jquery/plugins/spinner/ui.spinner.js</name>
+		</resource>
+	</resources>
+</component>
