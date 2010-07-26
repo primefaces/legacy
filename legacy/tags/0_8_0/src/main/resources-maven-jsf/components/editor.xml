@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+	/*
+	* Licensed to the Apache Software Foundation (ASF) under one
+	* or more contributor license agreements.  See the NOTICE file
+	* distributed with this work for additional information
+	* regarding copyright ownership.  The ASF licenses this file
+	* to you under the Apache License, Version 2.0 (the
+	* "License"); you may not use this file except in compliance
+	* with the License.  You may obtain a copy of the License at
+	*
+	*   http://www.apache.org/licenses/LICENSE-2.0
+	*
+	* Unless required by applicable law or agreed to in writing,
+	* software distributed under the License is distributed on an
+	* "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+	* KIND, either express or implied.  See the License for the
+	* specific language governing permissions and limitations
+	* under the License.
+	*/
+	//-->
+
+<!DOCTYPE component SYSTEM "../misc/component.dtd" [
+<!ENTITY standard_uicomponent_attributes		SYSTEM "../entities/standard_uicomponent_attributes.xml">
+<!ENTITY output_component_attributes			SYSTEM "../entities/output_component_attributes.xml">
+<!ENTITY input_component_attributes				SYSTEM "../entities/input_component_attributes.xml">
+<!ENTITY html_input_textarea_attributes			SYSTEM "../entities/html_input_textarea_attributes.xml">
+<!ENTITY widget_var_attribute					SYSTEM "../entities/widget_var_attribute.xml">
+]>
+<component>
+	<tag>editor</tag>
+	<tagClass>org.primefaces.ui.component.editor.EditorTag</tagClass>
+	<componentClass>org.primefaces.ui.component.editor.Editor</componentClass>
+	<componentType>org.primefaces.ui.Editor</componentType>
+	<componentFamily>org.primefaces</componentFamily>
+	<rendererType>org.primefaces.ui.component.EditorRenderer</rendererType>
+	<rendererClass>org.primefaces.ui.component.editor.EditorRenderer</rendererClass>
+	<parent>javax.faces.component.UIInput</parent>
+	<attributes>
+		&input_component_attributes;
+		&widget_var_attribute;
+		<attribute>
+			<name>width</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+			<defaultValue>500px</defaultValue>
+			<description>Width of the editor</description>
+		</attribute>
+		<attribute>
+			<name>height</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+			<defaultValue>300px</defaultValue>
+			<description>Height of the editor</description>
+		</attribute>
+	</attributes>
+	<resources>
+		<resource>
+			<name>/yui/menu/assets/skins/sam/menu.css</name>
+		</resource>
+		<resource>
+			<name>/yui/assets/skins/sam/button.css</name>
+		</resource>
+		<resource>
+			<name>/yui/container/assets/skins/sam/container.css</name>
+		</resource>
+		<resource>
+			<name>/yui/editor/assets/skins/sam/editor.css</name>
+		</resource>
+		<resource>
+			<name>/yui/utilities/utilities.js</name>
+		</resource>
+		<resource>
+			<name>/yui/container/container-min.js</name>
+		</resource>
+		<resource>
+			<name>/yui/menu/menu-min.js</name>
+		</resource>
+		<resource>
+			<name>/yui/button/button-min.js</name>
+		</resource>
+		<resource>
+			<name>/yui/editor/editor-min.js</name>
+		</resource>
+	</resources>
+</component>

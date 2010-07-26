@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!--
+		/* * Licensed to the Apache Software Foundation (ASF) under one * or
+		more contributor license agreements. See the NOTICE file * distributed
+		with this work for additional information * regarding copyright
+		ownership. The ASF licenses this file * to you under the Apache
+		License, Version 2.0 (the * "License"); you may not use this file
+		except in compliance * with the License. You may obtain a copy of the
+		License at * * http://www.apache.org/licenses/LICENSE-2.0 * * Unless
+		required by applicable law or agreed to in writing, * software
+		distributed under the License is distributed on an * "AS IS" BASIS,
+		WITHOUT WARRANTIES OR CONDITIONS OF ANY * KIND, either express or
+		implied. See the License for the * specific language governing
+		permissions and limitations * under the License. */ //
+	-->
+
+<!DOCTYPE component SYSTEM "../misc/component.dtd" [
+<!ENTITY standard_uicomponent_attributes		SYSTEM "../entities/standard_uicomponent_attributes.xml">
+<!ENTITY widget_var_attribute					SYSTEM "../entities/widget_var_attribute.xml">
+]>
+<component>
+	<tag>columnChart</tag>
+	<tagClass>org.primefaces.ui.component.chart.column.ColumnChartTag</tagClass>
+	<componentClass>org.primefaces.ui.component.chart.column.ColumnChart</componentClass>
+	<componentType>org.primefaces.ui.ColumnChart</componentType>
+	<componentFamily>org.primefaces</componentFamily>
+	<rendererType>org.primefaces.ui.component.chart.ColumnChartRenderer</rendererType>
+	<rendererClass>org.primefaces.ui.component.chart.column.ColumnChartRenderer</rendererClass>
+	<parent>org.primefaces.ui.component.chart.UIChart</parent>
+	<ajaxComponent>true</ajaxComponent>
+	<attributes>
+		&standard_uicomponent_attributes;
+		<attribute>
+			<name>widgetVar</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+			<ignoreInComponent>true</ignoreInComponent>
+			<description>
+				Javascript variable name of the wrapped yui widget 
+			</description>
+		</attribute>
+		<attribute>
+			<name>value</name>
+			<required>true</required>
+			<type>java.lang.Object</type>
+			<ignoreInComponent>true</ignoreInComponent>
+			<description>Data to be displayed on the chart</description>
+		</attribute>
+		<attribute>
+			<name>var</name>
+			<required>true</required>
+			<type>java.lang.String</type>
+			<ignoreInComponent>true</ignoreInComponent>
+			<literal>true</literal>
+			<description>Name of the data iterator</description>
+		</attribute>
+		<attribute>
+			<name>xfield</name>
+			<required>false</required>
+			<type>java.lang.Object</type>
+			<description>Field for the x axis</description>
+		</attribute>
+		<attribute>
+			<name>styleClass</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+			<ignoreInComponent>true</ignoreInComponent>
+			<description>Style to apply to chart container element.</description>
+		</attribute>
+		<attribute>
+			<name>style</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+			<ignoreInComponent>true</ignoreInComponent>
+			<description>Javascript object that represents the chart style</description>
+		</attribute>
+		<attribute>
+			<name>wmode</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+			<ignoreInComponent>true</ignoreInComponent>
+			<description>
+				wmode property of the flash object.
+			</description>
+		</attribute>
+		<attribute>
+			<name>live</name>
+			<required>false</required>
+			<type>java.lang.Boolean</type>
+			<defaultValue>false</defaultValue>
+			<ignoreInComponent>true</ignoreInComponent>
+			<description>When a chart is live, the data is refreshed based on the refreshInterval</description>
+		</attribute>
+		<attribute>
+			<name>oncomplete</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+			<ignoreInComponent>true</ignoreInComponent>
+			<description>
+				Javascript event to be called when ajax request for item select event is completed.
+			</description>
+		</attribute>
+		<attribute>
+			<name>refreshInterval</name>
+			<required>false</required>
+			<type>java.lang.Integer</type>
+			<defaultValue>3000</defaultValue>
+			<ignoreInComponent>true</ignoreInComponent>
+			<description>Refresh period of a live chart data in milliseconds</description>
+		</attribute>
+	</attributes>
+	<resources>
+		<resource>
+			<name>/yui/utilities/utilities.js</name>
+		</resource>
+		<resource>
+			<name>/yui/datasource/datasource-min.js</name>
+		</resource>
+		<resource>
+			<name>/yui/json/json-min.js</name>
+		</resource>
+		<resource>
+			<name>/yui/charts/charts-experimental-min.js</name>
+		</resource>
+		<resource>
+			<name>/primefaces/ajax/ajax.js</name>
+		</resource>
+		<resource>
+			<name>/yuiext/charts/charts.js</name>
+		</resource>
+	</resources>
+</component>

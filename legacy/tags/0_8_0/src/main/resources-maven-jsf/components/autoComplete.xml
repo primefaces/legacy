@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+	/*
+	* Licensed to the Apache Software Foundation (ASF) under one
+	* or more contributor license agreements.  See the NOTICE file
+	* distributed with this work for additional information
+	* regarding copyright ownership.  The ASF licenses this file
+	* to you under the Apache License, Version 2.0 (the
+	* "License"); you may not use this file except in compliance
+	* with the License.  You may obtain a copy of the License at
+	*
+	*   http://www.apache.org/licenses/LICENSE-2.0
+	*
+	* Unless required by applicable law or agreed to in writing,
+	* software distributed under the License is distributed on an
+	* "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+	* KIND, either express or implied.  See the License for the
+	* specific language governing permissions and limitations
+	* under the License.
+	*/
+	//-->
+
+<!DOCTYPE component SYSTEM "../misc/component.dtd" [
+<!ENTITY standard_uicomponent_attributes		SYSTEM "../entities/standard_uicomponent_attributes.xml">
+<!ENTITY output_component_attributes			SYSTEM "../entities/output_component_attributes.xml">
+<!ENTITY input_component_attributes				SYSTEM "../entities/input_component_attributes.xml">
+<!ENTITY html_input_textarea_attributes			SYSTEM "../entities/html_input_textarea_attributes.xml">
+<!ENTITY widget_var_attribute					SYSTEM "../entities/widget_var_attribute.xml">
+]>
+<component>
+	<tag>autoComplete</tag>
+	<tagClass>org.primefaces.ui.component.autocomplete.AutoCompleteTag</tagClass>
+	<componentHandlerClass>org.primefaces.ui.component.autocomplete.AutoCompleteHandler</componentHandlerClass>
+	<componentClass>org.primefaces.ui.component.autocomplete.AutoComplete</componentClass>
+	<componentType>org.primefaces.ui.AutoComplete</componentType>
+	<componentFamily>org.primefaces</componentFamily>
+	<rendererType>org.primefaces.ui.component.AutoCompleteRenderer</rendererType>
+	<rendererClass>org.primefaces.ui.component.autocomplete.AutoCompleteRenderer</rendererClass>
+	<parent>javax.faces.component.UIInput</parent>
+	<ajaxComponent>true</ajaxComponent>
+	<attributes>
+		&input_component_attributes;
+		&widget_var_attribute;
+		<attribute>
+			<name>completeMethod</name>
+			<required>false</required>
+			<type>javax.el.MethodExpression</type>
+			<description>Method to be called to fetch the suggestions</description>
+		</attribute>
+		<attribute>
+			<name>animHoriz</name>
+			<required>false</required>
+			<type>java.lang.Boolean</type>
+			<defaultValue>false</defaultValue>
+			<description>Specifies horizontal animation.</description>
+		</attribute>
+		<attribute>
+			<name>animVert</name>
+			<required>false</required>
+			<type>java.lang.Boolean</type>
+			<defaultValue>true</defaultValue>
+			<description>Specifies vertical animation.</description>
+		</attribute>
+		<attribute>
+			<name>animSpeed</name>
+			<required>false</required>
+			<type>java.lang.Double</type>
+			<defaultValue>0.3</defaultValue>
+			<description>Speed of the animation in seconds, default value is 0.3 seconds.</description>
+		</attribute>
+		<attribute>
+			<name>maxResults</name>
+			<required>false</required>
+			<type>java.lang.Integer</type>
+			<defaultValue>10</defaultValue>
+			<description>Maximum number of results to be displayed.</description>
+		</attribute>
+		<attribute>
+			<name>minQueryLength</name>
+			<required>false</required>
+			<type>java.lang.Integer</type>
+			<defaultValue>1</defaultValue>
+			<description>Number of characters to be typed before starting to query.</description>
+		</attribute>
+		<attribute>
+			<name>queryDelay</name>
+			<required>false</required>
+			<type>java.lang.Double</type>
+			<defaultValue>0.2</defaultValue>
+			<description>Delay to wait in seconds before sending each query to the server.</description>
+		</attribute>
+		<attribute>
+			<name>autoHighlight</name>
+			<required>false</required>
+			<type>java.lang.Boolean</type>
+			<defaultValue>true</defaultValue>
+			<description>When suggested items are listed, first item is highlighted automatically. This feature can be controlled with autoHighlight attribute.</description>
+		</attribute>
+		<attribute>
+			<name>useShadow</name>
+			<required>false</required>
+			<type>java.lang.Boolean</type>
+			<defaultValue>false</defaultValue>
+			<description>Shadow is displayed under the results list when set to true, default is false.</description>
+		</attribute>
+		<attribute>
+			<name>typeAhead</name>
+			<required>false</required>
+			<type>java.lang.Boolean</type>
+			<defaultValue>false</defaultValue>
+			<description>Updates the input field with the first query result, default is false.</description>
+		</attribute>
+		<attribute>
+			<name>typeAheadDelay</name>
+			<required>false</required>
+			<type>java.lang.Double</type>
+			<defaultValue>0.5</defaultValue>
+			<description>Delay before updating the input field with the first query result if typeAhead is set to true.</description>
+		</attribute>
+	</attributes>
+	<resources>
+		<resource>
+			<name>/yui/autocomplete/assets/skins/sam/autocomplete.css</name>
+		</resource>
+		<resource>
+			<name>/yui/utilities/utilities.js</name>
+		</resource>
+		<resource>
+			<name>/yui/datasource/datasource-min.js</name>
+		</resource>
+		<resource>
+			<name>/yui/json/json-min.js</name>
+		</resource>
+		<resource>
+			<name>/yui/autocomplete/autocomplete-min.js</name>
+		</resource>
+		<resource>
+			<name>/yuiext/autocomplete/autocomplete.js</name>
+		</resource>
+	</resources>
+</component>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+	/*
+	* Licensed to the Apache Software Foundation (ASF) under one
+	* or more contributor license agreements.  See the NOTICE file
+	* distributed with this work for additional information
+	* regarding copyright ownership.  The ASF licenses this file
+	* to you under the Apache License, Version 2.0 (the
+	* "License"); you may not use this file except in compliance
+	* with the License.  You may obtain a copy of the License at
+	*
+	*   http://www.apache.org/licenses/LICENSE-2.0
+	*
+	* Unless required by applicable law or agreed to in writing,
+	* software distributed under the License is distributed on an
+	* "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+	* KIND, either express or implied.  See the License for the
+	* specific language governing permissions and limitations
+	* under the License.
+	*/
+	//-->
+
+<!DOCTYPE component SYSTEM "../misc/component.dtd" [
+<!ENTITY standard_uicomponent_attributes		SYSTEM "../entities/standard_uicomponent_attributes.xml">
+<!ENTITY widget_var_attribute					SYSTEM "../entities/widget_var_attribute.xml">
+]>
+<component>
+	<tag>poll</tag>
+	<tagClass>org.primefaces.ui.component.poll.PollTag</tagClass>
+	<componentClass>org.primefaces.ui.component.poll.Poll</componentClass>
+	<componentType>org.primefaces.ui.Poll</componentType>
+	<componentFamily>org.primefaces</componentFamily>
+	<rendererType>org.primefaces.ui.component.PollRenderer</rendererType>
+	<rendererClass>org.primefaces.ui.component.poll.PollRenderer</rendererClass>
+	<parent>javax.faces.component.UICommand</parent>
+	<attributes>
+		&standard_uicomponent_attributes;
+		&widget_var_attribute;
+		<attribute>
+			<name>interval</name>
+			<required>false</required>
+			<defaultValue>2</defaultValue>
+			<type>java.lang.Integer</type>
+			<description>Interval in seconds to do periodic ajax requests.</description>
+		</attribute>
+		<attribute>
+			<name>decay</name>
+			<required>false</required>
+			<defaultValue>1</defaultValue>
+			<type>java.lang.Integer</type>
+			<description>Controls the rate at which the request interval grows when the response is unchanged.</description>
+		</attribute>
+		<attribute>
+			<name>update</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+			<description>
+				Client side id of the component(s) to be updated after async partial submit request.
+			</description>
+		</attribute>
+		<attribute>
+			<name>actionListener</name>
+			<required>false</required>
+			<type>javax.faces.event.ActionListener</type>
+			<ignoreInComponent>true</ignoreInComponent>
+		</attribute>
+		<attribute>
+			<name>action</name>
+			<required>false</required>
+			<type>javax.el.MethodExpression</type>
+			<ignoreInComponent>true</ignoreInComponent>
+		</attribute>
+		<attribute>
+			<name>immediate</name>
+			<required>false</required>
+			<type>boolean</type>
+			<defaultValue>false</defaultValue>
+			<ignoreInComponent>true</ignoreInComponent>
+		</attribute>
+	</attributes>
+	<resources>
+		<resource>
+			<name>/yui/cookie/cookie-min.js</name>
+		</resource>
+		<resource>
+			<name>/prototype/prototype.js</name>
+		</resource>
+		<resource>
+			<name>/primefaces/ajax/ajax.js</name>
+		</resource>
+		<resource>
+			<name>/primefaces/poll/poll.js</name>
+		</resource>
+	</resources>
+</component>

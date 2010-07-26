@@ -1,0 +1,9 @@
+	<managed-bean>
+		<managed-bean-name>primeFacesResourceHolder</managed-bean-name>
+		<managed-bean-class>org.primefaces.ui.resource.ResourceHolderImpl</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	
+	<lifecycle>
+		<phase-listener>org.primefaces.ui.application.PrimeFacesPhaseListener</phase-listener>
+	</lifecycle>

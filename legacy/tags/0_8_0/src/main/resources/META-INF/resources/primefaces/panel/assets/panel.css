@@ -1,0 +1,24 @@
+.p-panel {
+	width:100%;
+	border: 1px #808080 solid;
+}
+
+.p-panel-header {
+	padding: 2px 5px 2px 5px;
+}
+
+.p-panel-content,.p-panel-footer {
+	padding:5px;
+}
+
+.p-panel-header {
+	background: url(primefaces_resources:url:/primefaces/panel/assets/panel_header.png) repeat-x;
+}
+
+.p-panel-content,.p-panel-footer {
+	background: #F2F2F2;
+}
+
+.p-panel-footer {
+	border-top: 1px #808080 solid;
+}

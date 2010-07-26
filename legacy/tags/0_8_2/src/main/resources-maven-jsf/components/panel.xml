@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+	/*
+	* Licensed to the Apache Software Foundation (ASF) under one
+	* or more contributor license agreements.  See the NOTICE file
+	* distributed with this work for additional information
+	* regarding copyright ownership.  The ASF licenses this file
+	* to you under the Apache License, Version 2.0 (the
+	* "License"); you may not use this file except in compliance
+	* with the License.  You may obtain a copy of the License at
+	*
+	*   http://www.apache.org/licenses/LICENSE-2.0
+	*
+	* Unless required by applicable law or agreed to in writing,
+	* software distributed under the License is distributed on an
+	* "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+	* KIND, either express or implied.  See the License for the
+	* specific language governing permissions and limitations
+	* under the License.
+	*/
+	//-->
+
+<!DOCTYPE component SYSTEM "../misc/component.dtd" [
+<!ENTITY standard_uicomponent_attributes		SYSTEM "../entities/standard_uicomponent_attributes.xml">
+<!ENTITY widget_var_attribute					SYSTEM "../entities/widget_var_attribute.xml">
+]>
+<component>
+	<tag>panel</tag>
+	<tagClass>org.primefaces.ui.component.panel.PanelTag</tagClass>
+	<componentClass>org.primefaces.ui.component.panel.Panel</componentClass>
+	<componentType>org.primefaces.ui.Panel</componentType>
+	<componentFamily>org.primefaces</componentFamily>
+	<rendererType>org.primefaces.ui.component.PanelRenderer</rendererType>
+	<rendererClass>org.primefaces.ui.component.panel.PanelRenderer</rendererClass>
+	<parent>javax.faces.component.UIPanel</parent>
+	<attributes>
+		&standard_uicomponent_attributes;
+		<attribute>
+			<name>header</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+			<description>Header text of the panel</description>
+		</attribute>
+		<attribute>
+			<name>footer</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+			<description>Footer text of the panel</description>
+		</attribute>
+		<attribute>
+			<name>styleClass</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+			<description>Style class of the panel container</description>
+		</attribute>
+		<attribute>
+			<name>headerClass</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+			<description>Style class of the panel header</description>
+		</attribute>
+		<attribute>
+			<name>contentClass</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+			<description>Style class of the panel content</description>
+		</attribute>
+		<attribute>
+			<name>footerClass</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+			<description>Style class of the panel content</description>
+		</attribute>
+	</attributes>
+	<resources>
+		<resource>
+			<name>/primefaces/panel/assets/panel.css</name>
+		</resource>
+	</resources>
+</component>

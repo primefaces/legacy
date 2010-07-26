@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+//-->
+
+<!DOCTYPE component SYSTEM "../misc/component.dtd" [
+<!ENTITY standard_uicomponent_attributes		SYSTEM "../entities/standard_uicomponent_attributes.xml">
+<!ENTITY widget_var_attribute					SYSTEM "../entities/widget_var_attribute.xml">
+<!ENTITY output_component_attributes			SYSTEM "../entities/output_component_attributes.xml">
+]>
+<component>
+	<tag>tooltip</tag>
+	<tagClass>org.primefaces.ui.component.tooltip.TooltipTag</tagClass>
+	<componentClass>org.primefaces.ui.component.tooltip.Tooltip</componentClass>
+	<componentType>org.primefaces.ui.Tooltip</componentType>
+	<componentFamily>org.primefaces</componentFamily>
+	<rendererType>org.primefaces.ui.component.TooltipRenderer</rendererType>
+	<rendererClass>org.primefaces.ui.component.tooltip.TooltipRenderer</rendererClass>
+	<parent>javax.faces.component.UIOutput</parent>
+	<attributes>
+		&standard_uicomponent_attributes;
+		&output_component_attributes;
+		&widget_var_attribute;
+		<attribute>
+			<name>showDelay</name>
+			<required>false</required>
+			<type>java.lang.Integer</type>
+			<defaultValue>200</defaultValue>
+			<description>The number of milliseconds to wait before showing a Tooltip on mouseover</description>
+		</attribute>
+		<attribute>
+			<name>hideDelay</name>
+			<required>false</required>
+			<type>java.lang.Integer</type>
+			<defaultValue>250</defaultValue>
+			<description>The number of milliseconds to wait before hiding a Tooltip on mouseover</description>
+		</attribute>
+		<attribute>
+			<name>autoDismissDelay</name>
+			<required>false</required>
+			<type>java.lang.Integer</type>
+			<defaultValue>5000</defaultValue>
+			<description>The number of milliseconds to wait before automatically dismissing a Tooltip after the mouse has been resting on the context element.</description>
+		</attribute>
+		<attribute>
+			<name>disabled</name>
+			<required>false</required>
+			<type>java.lang.Boolean</type>
+			<defaultValue>false</defaultValue>
+			<description>Enables/Disables the tooltip</description>
+		</attribute>
+	</attributes>
+	<resources>
+		<resource>
+			<name>/yuiext/tooltip/tooltip.css</name>
+		</resource>
+		<resource>
+			<name>/yui/utilities/utilities.js</name>
+		</resource>
+		<resource>
+			<name>/yui/container/container-min.js</name>
+		</resource>
+	</resources>
+</component>
