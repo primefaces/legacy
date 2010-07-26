@@ -6,10 +6,10 @@
 ]>
 <component>
 	<tag>tab</tag>
-	<tagClass>org.primefaces.component.tabview.TabTag</tagClass>
-	<componentClass>org.primefaces.component.tabview.Tab</componentClass>
-	<componentType>org.primefaces.component.Tab</componentType>
-	<componentFamily>org.primefaces.component</componentFamily>
+	<tagClass>org.primefaces.ui.component.tabview.TabTag</tagClass>
+	<componentClass>org.primefaces.ui.component.tabview.Tab</componentClass>
+	<componentType>org.primefaces.ui.Tab</componentType>
+	<componentFamily>org.primefaces</componentFamily>
 	<parent>javax.faces.component.UIComponentBase</parent>
 	<attributes>
 		&standard_uicomponent_attributes;

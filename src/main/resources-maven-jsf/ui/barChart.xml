@@ -5,19 +5,15 @@
 ]>
 <component>
 	<tag>barChart</tag>
-	<tagClass>org.primefaces.component.chart.bar.BarChartTag</tagClass>
-	<componentHandlerClass>org.primefaces.component.chart.ChartHandler</componentHandlerClass>
-	<componentClass>org.primefaces.component.chart.bar.BarChart</componentClass>
-	<componentType>org.primefaces.component.chart.BarChart</componentType>
-	<componentFamily>org.primefaces.component</componentFamily>
-	<rendererType>org.primefaces.component.chart.BarChartRenderer</rendererType>
-	<rendererClass>org.primefaces.component.chart.bar.BarChartRenderer</rendererClass>
-	<parent>org.primefaces.component.chart.UIChart</parent>
-	<interfaces>
-		<interface>
-			<name>org.primefaces.component.api.AjaxComponent</name>
-		</interface>
-	</interfaces>
+	<tagClass>org.primefaces.ui.component.chart.bar.BarChartTag</tagClass>
+	<componentHandlerClass>org.primefaces.ui.component.chart.ChartHandler</componentHandlerClass>
+	<componentClass>org.primefaces.ui.component.chart.bar.BarChart</componentClass>
+	<componentType>org.primefaces.ui.chart.BarChart</componentType>
+	<componentFamily>org.primefaces</componentFamily>
+	<rendererType>org.primefaces.ui.component.chart.BarChartRenderer</rendererType>
+	<rendererClass>org.primefaces.ui.component.chart.bar.BarChartRenderer</rendererClass>
+	<parent>org.primefaces.ui.component.chart.UIChart</parent>
+	<ajaxComponent>true</ajaxComponent>
 	<attributes>
 		&standard_uicomponent_attributes;
 		<attribute>
@@ -112,24 +108,8 @@
 			<required>false</required>
 			<type>javax.el.MethodExpression</type>
 			<ignoreInComponent>true</ignoreInComponent>
-			<method-signature>void itemSelectListener(org.primefaces.event.ItemSelectEvent)</method-signature>
+			<method-signature>void itemSelectListener(org.primefaces.ui.event.chart.ItemSelectEvent)</method-signature>
 			<description>Method expression to listen chart series item select events</description>
-		</attribute>
-		<attribute>
-			<name>width</name>
-			<required>false</required>
-			<type>java.lang.String</type>
-			<defaultValue>500px</defaultValue>
-			<ignoreInComponent>true</ignoreInComponent>
-			<description>Width of the chart</description>
-		</attribute>
-		<attribute>
-			<name>height</name>
-			<required>false</required>
-			<type>java.lang.String</type>
-			<defaultValue>350px</defaultValue>
-			<ignoreInComponent>true</ignoreInComponent>
-			<description>Height of the chart</description>
 		</attribute>
 		<attribute>
 			<name>minX</name>
@@ -165,29 +145,6 @@
 				Title of the y-axis.
 			</description>
 		</attribute>
-		<attribute>
-			<name>labelFunctionX</name>
-			<required>false</required>
-			<type>java.lang.String</type>
-			<description>
-				Javascript function to format x-axis labels.
-			</description>
-		</attribute>
-		<attribute>
-			<name>labelFunctionY</name>
-			<required>false</required>
-			<type>java.lang.String</type>
-			<description>
-				Javascript function to format y-axis labels.
-			</description>
-		</attribute>
-		<attribute>
-			<name>dataTipFunction</name>
-			<required>false</required>
-			<type>java.lang.String</type>
-			<ignoreInComponent>true</ignoreInComponent>
-			<description>Javascript function name to customize the data tips.</description>
-		</attribute>
 	</attributes>
 	<resources>
 		<resource>
@@ -195,6 +152,9 @@
 		</resource>
 		<resource>
 			<name>/yui/datasource/datasource-min.js</name>
+		</resource>
+		<resource>
+			<name>/yui/json/json-min.js</name>
 		</resource>
 		<resource>
 			<name>/yui/swf/swf-min.js</name>
@@ -206,7 +166,7 @@
 			<name>/jquery/jquery.js</name>
 		</resource>
 		<resource>
-			<name>/primefaces/core/core.js</name>
+			<name>/primefaces/ajax/ajax.js</name>
 		</resource>
 		<resource>
 			<name>/primefaces/charts/charts.js</name>

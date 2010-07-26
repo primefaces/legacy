@@ -1,10 +1,13 @@
+if(PrimeFaces == undefined) var PrimeFaces = {};
+if(PrimeFaces.widget == undefined) PrimeFaces.widget = {};
+
 PrimeFaces.widget.PickList = function(id, config) {
 	this.id = id;
 	this.config = config;
-	this.sourceId = PrimeFaces.escapeClientId(id + "_source");
-	this.targetId = PrimeFaces.escapeClientId(id + "_target");
-	this.sourceList = PrimeFaces.escapeClientId(id + "_sourceList");
-	this.targetList = PrimeFaces.escapeClientId(id + "_targetList");
+	this.sourceId = PrimeFaces.core.Utils.escapeClientId(id + "_source");
+	this.targetId = PrimeFaces.core.Utils.escapeClientId(id + "_target");
+	this.sourceList = PrimeFaces.core.Utils.escapeClientId(id + "_sourceList");
+	this.targetList = PrimeFaces.core.Utils.escapeClientId(id + "_targetList");
 }
 
 PrimeFaces.widget.PickList.prototype.add = function() {

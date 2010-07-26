@@ -5,19 +5,19 @@
 ]>
 <component>
 	<tag>media</tag>
-	<tagClass>org.primefaces.component.media.MediaTag</tagClass>
-	<componentClass>org.primefaces.component.media.Media</componentClass>
-	<componentType>org.primefaces.component.Media</componentType>
-	<componentFamily>org.primefaces.component</componentFamily>
-	<rendererType>org.primefaces.component.MediaRenderer</rendererType>
-	<rendererClass>org.primefaces.component.media.MediaRenderer</rendererClass>
+	<tagClass>org.primefaces.ui.component.media.MediaTag</tagClass>
+	<componentClass>org.primefaces.ui.component.media.Media</componentClass>
+	<componentType>org.primefaces.ui.Media</componentType>
+	<componentFamily>org.primefaces.ui</componentFamily>
+	<rendererType>org.primefaces.ui.component.MediaRenderer</rendererType>
+	<rendererClass>org.primefaces.ui.component.media.MediaRenderer</rendererClass>
 	<parent>javax.faces.component.UIComponentBase</parent>
 	<attributes>
 		&standard_uicomponent_attributes;
 		<attribute>
 			<name>value</name>
 			<required>false</required>
-			<type>java.lang.Object</type>
+			<type>java.lang.String</type>
 			<description>
 				 URL referring to the media to be played.
 			</description>

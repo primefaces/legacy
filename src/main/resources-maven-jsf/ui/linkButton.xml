@@ -6,12 +6,12 @@
 ]>
 <component>
 	<tag>linkButton</tag>
-	<tagClass>org.primefaces.component.linkbutton.LinkButtonTag</tagClass>
-	<componentClass>org.primefaces.component.linkbutton.LinkButton</componentClass>
-	<componentType>org.primefaces.component.LinkButton</componentType>
-	<componentFamily>org.primefaces.component</componentFamily>
-	<rendererType>org.primefaces.component.LinkButtonRenderer</rendererType>
-	<rendererClass>org.primefaces.component.linkbutton.LinkButtonRenderer</rendererClass>
+	<tagClass>org.primefaces.ui.component.button.LinkButtonTag</tagClass>
+	<componentClass>org.primefaces.ui.component.button.LinkButton</componentClass>
+	<componentType>org.primefaces.ui.LinkButton</componentType>
+	<componentFamily>org.primefaces.ui</componentFamily>
+	<rendererType>org.primefaces.ui.component.LinkButtonRenderer</rendererType>
+	<rendererClass>org.primefaces.ui.component.button.LinkButtonRenderer</rendererClass>
 	<parent>javax.faces.component.UIOutput</parent>
 	<attributes>
 		&output_component_attributes;
@@ -28,14 +28,6 @@
 			<type>java.lang.String</type>
 			<description>
 				String specifying the target for the button.
-			</description>
-		</attribute>
-		<attribute>
-			<name>image</name>
-			<required>false</required>
-			<type>java.lang.String</type>
-			<description>
-				Image of the button.
 			</description>
 		</attribute>
 		<attribute>
@@ -183,19 +175,13 @@
 	</attributes>
 	<resources>
 		<resource>
-			<name>/jquery/plugins/ui/jquery.ui.button.css</name>
+			<name>/yui/button/assets/skins/sam/button.css</name>
 		</resource>
 		<resource>
-			<name>/jquery/jquery.js</name>
+			<name>/yui/utilities/utilities.js</name>
 		</resource>
 		<resource>
-			<name>/jquery/plugins/ui/jquery-ui.custom.js</name>
-		</resource>	
-		<resource>
-			<name>/primefaces/core/core.js</name>
-		</resource>
-		<resource>
-			<name>/primefaces/button/button.js</name>
+			<name>/yui/button/button-min.js</name>
 		</resource>
 	</resources>
 </component>

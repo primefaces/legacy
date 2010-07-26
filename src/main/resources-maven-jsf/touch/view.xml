@@ -4,12 +4,12 @@
 ]>
 <component>
 	<tag>view</tag>
-	<tagClass>org.primefaces.touch.component.view.ViewTag</tagClass>
-	<componentClass>org.primefaces.touch.component.view.View</componentClass>
-	<componentType>org.primefaces.touch.View</componentType>
-	<componentFamily>org.primefaces.touch</componentFamily>
-	<rendererType>org.primefaces.touch.component.ViewRenderer</rendererType>
-	<rendererClass>org.primefaces.touch.component.view.ViewRenderer</rendererClass>
+	<tagClass>org.primefaces.ui.touch.component.view.ViewTag</tagClass>
+	<componentClass>org.primefaces.ui.touch.component.view.View</componentClass>
+	<componentType>org.primefaces.ui.touch.View</componentType>
+	<componentFamily>org.primefaces.ui.touch</componentFamily>
+	<rendererType>org.primefaces.ui.touch.component.ViewRenderer</rendererType>
+	<rendererClass>org.primefaces.ui.touch.component.view.ViewRenderer</rendererClass>
 	<parent>javax.faces.component.UIComponentBase</parent>
 	<attributes>
 		&standard_uicomponent_attributes;

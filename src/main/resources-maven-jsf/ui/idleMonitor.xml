@@ -5,13 +5,13 @@
 ]>
 <component>
 	<tag>idleMonitor</tag>
-	<tagClass>org.primefaces.component.idlemonitor.IdleMonitorTag</tagClass>
-	<componentHandlerClass>org.primefaces.component.idlemonitor.IdleMonitorHandler</componentHandlerClass>
-	<componentClass>org.primefaces.component.idlemonitor.IdleMonitor</componentClass>
-	<componentType>org.primefaces.component.IdleMonitor</componentType>
-	<componentFamily>org.primefaces.component</componentFamily>
-	<rendererType>org.primefaces.component.IdleMonitorRenderer</rendererType>
-	<rendererClass>org.primefaces.component.idlemonitor.IdleMonitorRenderer</rendererClass>
+	<tagClass>org.primefaces.ui.component.idlemonitor.IdleMonitorTag</tagClass>
+	<componentHandlerClass>org.primefaces.ui.component.idlemonitor.IdleMonitorHandler</componentHandlerClass>
+	<componentClass>org.primefaces.ui.component.idlemonitor.IdleMonitor</componentClass>
+	<componentType>org.primefaces.ui.IdleMonitor</componentType>
+	<componentFamily>org.primefaces.ui</componentFamily>
+	<rendererType>org.primefaces.ui.component.IdleMonitorRenderer</rendererType>
+	<rendererClass>org.primefaces.ui.component.idlemonitor.IdleMonitorRenderer</rendererClass>
 	<parent>javax.faces.component.UIComponentBase</parent>
 	<attributes>
 		&standard_uicomponent_attributes;
@@ -38,7 +38,7 @@
 			<name>idleListener</name>
 			<required>false</required>
 			<type>javax.el.MethodExpression</type>
-			<method-signature>void idleListener(org.primefaces.event.IdleEvent)</method-signature>
+			<method-signature>void idleListener(org.primefaces.ui.event.idlemonitor.IdleEvent)</method-signature>
 		</attribute>
 		<attribute>
 			<name>update</name>
@@ -51,16 +51,13 @@
 	</attributes>
 	<resources>
 		<resource>
-			<name>/yui/utilities/utilities.js</name>
-		</resource>
-		<resource>
 			<name>/jquery/jquery.js</name>
 		</resource>
 		<resource>
 			<name>/jquery/plugins/idletimer/idletimer.js</name>
 		</resource>
 		<resource>
-			<name>/primefaces/core/core.js</name>
+			<name>/primefaces/ajax/ajax.js</name>
 		</resource>
 		<resource>
 			<name>/primefaces/idlemonitor/idlemonitor.js</name>

@@ -8,12 +8,12 @@
 ]>
 <component>
 	<tag>keyboard</tag>
-	<tagClass>org.primefaces.component.keyboard.KeyboardTag</tagClass>
-	<componentClass>org.primefaces.component.keyboard.Keyboard</componentClass>
-	<componentType>org.primefaces.component.Keyboard</componentType>
-	<componentFamily>org.primefaces.component</componentFamily>
-	<rendererType>org.primefaces.component.KeyboardRenderer</rendererType>
-	<rendererClass>org.primefaces.component.keyboard.KeyboardRenderer</rendererClass>
+	<tagClass>org.primefaces.ui.component.keyboard.KeyboardTag</tagClass>
+	<componentClass>org.primefaces.ui.component.keyboard.Keyboard</componentClass>
+	<componentType>org.primefaces.ui.Keyboard</componentType>
+	<componentFamily>org.primefaces.ui</componentFamily>
+	<rendererType>org.primefaces.ui.component.KeyboardRenderer</rendererType>
+	<rendererClass>org.primefaces.ui.component.keyboard.KeyboardRenderer</rendererClass>
 	<parent>javax.faces.component.html.HtmlInputText</parent>
 	<attributes>
 		&input_component_attributes;
@@ -119,9 +119,6 @@
 		</resource>
 		<resource>
 			<name>/jquery/plugins/keyboard/keypad.min.js</name>
-		</resource>
-		<resource>
-			<name>/primefaces/core/core.js</name>
 		</resource>
 		<resource>
 			<name>/primefaces/keyboard/keyboard.js</name>

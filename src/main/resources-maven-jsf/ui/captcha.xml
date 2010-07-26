@@ -7,12 +7,12 @@
 ]>
 <component>
 	<tag>captcha</tag>
-	<tagClass>org.primefaces.component.captcha.CaptchaTag</tagClass>
-	<componentClass>org.primefaces.component.captcha.Captcha</componentClass>
-	<componentType>org.primefaces.component.Captcha</componentType>
-	<componentFamily>org.primefaces.component</componentFamily>
-	<rendererType>org.primefaces.component.CaptchaRenderer</rendererType>
-	<rendererClass>org.primefaces.component.captcha.CaptchaRenderer</rendererClass>
+	<tagClass>org.primefaces.ui.component.captcha.CaptchaTag</tagClass>
+	<componentClass>org.primefaces.ui.component.captcha.Captcha</componentClass>
+	<componentType>org.primefaces.ui.Captcha</componentType>
+	<componentFamily>org.primefaces</componentFamily>
+	<rendererType>org.primefaces.ui.component.CaptchaRenderer</rendererType>
+	<rendererClass>org.primefaces.ui.component.captcha.CaptchaRenderer</rendererClass>
 	<parent>javax.faces.component.UIInput</parent>
 	<attributes>
 		&input_component_attributes;
@@ -35,13 +35,6 @@
 			<type>java.lang.String</type>
 			<defaultValue>en</defaultValue>
 			<description>Key of the supported languages, default is "en"</description>
-		</attribute>
-		<attribute>
-			<name>tabindex</name>
-			<required>false</required>
-			<type>java.lang.Integer</type>
-			<defaultValue>0</defaultValue>
-			<description>TabIndex value of the captcha</description>
 		</attribute>
 	</attributes>
 </component>

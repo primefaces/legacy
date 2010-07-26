@@ -7,12 +7,12 @@
 ]>
 <component>
 	<tag>inputMask</tag>
-	<tagClass>org.primefaces.component.inputmask.InputMaskTag</tagClass>
-	<componentClass>org.primefaces.component.inputmask.InputMask</componentClass>
-	<componentType>org.primefaces.component.InputMask</componentType>
-	<componentFamily>org.primefaces.component</componentFamily>
-	<rendererType>org.primefaces.component.InputMaskRenderer</rendererType>
-	<rendererClass>org.primefaces.component.inputmask.InputMaskRenderer</rendererClass>
+	<tagClass>org.primefaces.ui.component.inputmask.InputMaskTag</tagClass>
+	<componentClass>org.primefaces.ui.component.inputmask.InputMask</componentClass>
+	<componentType>org.primefaces.ui.InputMask</componentType>
+	<componentFamily>org.primefaces.ui</componentFamily>
+	<rendererType>org.primefaces.ui.component.InputMaskRenderer</rendererType>
+	<rendererClass>org.primefaces.ui.component.inputmask.InputMaskRenderer</rendererClass>
 	<parent>javax.faces.component.html.HtmlInputText</parent>
 	<attributes>
 		&input_component_attributes;
@@ -40,9 +40,6 @@
 		</resource>
 		<resource>
 			<name>/jquery/plugins/inputmask/maskedinput.js</name>
-		</resource>
-		<resource>
-			<name>/primefaces/core/core.js</name>
 		</resource>
 	</resources>
 </component>

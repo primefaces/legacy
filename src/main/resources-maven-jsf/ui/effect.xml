@@ -5,12 +5,12 @@
 ]>
 <component>
 	<tag>effect</tag>
-	<tagClass>org.primefaces.component.effect.EffectTag</tagClass>
-	<componentClass>org.primefaces.component.effect.Effect</componentClass>
-	<componentType>org.primefaces.component.Effect</componentType>
-	<componentFamily>org.primefaces.component</componentFamily>
-	<rendererType>org.primefaces.component.EffectRenderer</rendererType>
-	<rendererClass>org.primefaces.component.effect.EffectRenderer</rendererClass>
+	<tagClass>org.primefaces.ui.component.effect.EffectTag</tagClass>
+	<componentClass>org.primefaces.ui.component.effect.Effect</componentClass>
+	<componentType>org.primefaces.ui.Effect</componentType>
+	<componentFamily>org.primefaces.ui</componentFamily>
+	<rendererType>org.primefaces.ui.component.EffectRenderer</rendererType>
+	<rendererClass>org.primefaces.ui.component.effect.EffectRenderer</rendererClass>
 	<parent>javax.faces.component.UIComponentBase</parent>
 	<attributes>
 		&standard_uicomponent_attributes;
@@ -49,9 +49,6 @@
 		</resource>
 		<resource>
 			<name>/jquery/plugins/effects/effects.js</name>
-		</resource>
-		<resource>
-			<name>/primefaces/core/core.js</name>
 		</resource>
 	</resources>
 </component>

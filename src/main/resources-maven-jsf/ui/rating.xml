@@ -7,13 +7,13 @@
 ]>
 <component>
 	<tag>rating</tag>
-	<tagClass>org.primefaces.component.rating.RatingTag</tagClass>
-	<componentHandlerClass>org.primefaces.component.rating.RatingHandler</componentHandlerClass>
-	<componentClass>org.primefaces.component.rating.Rating</componentClass>
-	<componentType>org.primefaces.component.Rating</componentType>
-	<componentFamily>org.primefaces.component</componentFamily>
-	<rendererType>org.primefaces.component.RatingRenderer</rendererType>
-	<rendererClass>org.primefaces.component.rating.RatingRenderer</rendererClass>
+	<tagClass>org.primefaces.ui.component.rating.RatingTag</tagClass>
+	<componentHandlerClass>org.primefaces.ui.component.rating.RatingHandler</componentHandlerClass>
+	<componentClass>org.primefaces.ui.component.rating.Rating</componentClass>
+	<componentType>org.primefaces.ui.Rating</componentType>
+	<componentFamily>org.primefaces.ui</componentFamily>
+	<rendererType>org.primefaces.ui.component.RatingRenderer</rendererType>
+	<rendererClass>org.primefaces.ui.component.rating.RatingRenderer</rendererClass>
 	<parent>javax.faces.component.UIInput</parent>
 	<attributes>
 		&input_component_attributes;
@@ -30,7 +30,7 @@
 			<name>rateListener</name>
 			<required>false</required>
 			<type>javax.el.MethodExpression</type>
-			<method-signature>void rateListener(org.primefaces.event.RateEvent)</method-signature>
+			<method-signature>void rateListener(org.primefaces.ui.event.rating.RateEvent)</method-signature>
 			<description>A server side listener to process a RateEvent</description>
 		</attribute>
 		<attribute>
@@ -65,7 +65,7 @@
 			<name>/jquery/plugins/rating/jquery.rating.pack.js</name>
 		</resource>
 		<resource>
-			<name>/primefaces/core/core.js</name>
+			<name>/primefaces/ajax/ajax.js</name>
 		</resource>
 		<resource>
 			<name>/primefaces/rating/rating.js</name>

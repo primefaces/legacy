@@ -5,12 +5,12 @@
 ]>
 <component>
 	<tag>graphicImage</tag>
-	<tagClass>org.primefaces.component.graphicimage.GraphicImageTag</tagClass>
-	<componentClass>org.primefaces.component.graphicimage.GraphicImage</componentClass>
-	<componentType>org.primefaces.component.GraphicImage</componentType>
-	<componentFamily>org.primefaces.component</componentFamily>
-	<rendererType>org.primefaces.component.GraphicImageRenderer</rendererType>
-	<rendererClass>org.primefaces.component.graphicimage.GraphicImageRenderer</rendererClass>
+	<tagClass>org.primefaces.ui.component.graphicimage.GraphicImageTag</tagClass>
+	<componentClass>org.primefaces.ui.component.graphicimage.GraphicImage</componentClass>
+	<componentType>org.primefaces.ui.GraphicImage</componentType>
+	<componentFamily>org.primefaces.ui</componentFamily>
+	<rendererType>org.primefaces.ui.component.GraphicImageRenderer</rendererType>
+	<rendererClass>org.primefaces.ui.component.graphicimage.GraphicImageRenderer</rendererClass>
 	<parent>javax.faces.component.html.HtmlGraphicImage</parent>
 	<attributes>
 		&standard_uicomponent_attributes;
@@ -19,7 +19,7 @@
 			<required>false</required>
 			<type>java.lang.Object</type>
 			<ignoreInComponent>true</ignoreInComponent>
-			<description>Value referencing to the data of the image</description>
+			<description>Value referencing to the binary data of the image</description>
 		</attribute>
 		<attribute>
 			<name>alt</name>
@@ -208,15 +208,6 @@
 			<ignoreInComponent>true</ignoreInComponent>
 			<description>
 				 onmouseup dom event handler
-			</description>
-		</attribute>
-		<attribute>
-			<name>cache</name>
-			<required>false</required>
-			<type>java.lang.Boolean</type>
-			<defaultValue>true</defaultValue>
-			<description>
-				 Controls caching behavior of browsers
 			</description>
 		</attribute>
 	</attributes>

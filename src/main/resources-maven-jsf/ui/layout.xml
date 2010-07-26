@@ -5,13 +5,12 @@
 ]>
 <component>
 	<tag>layout</tag>
-	<tagClass>org.primefaces.component.layout.LayoutTag</tagClass>
-	<componentClass>org.primefaces.component.layout.Layout</componentClass>
-	<componentHandlerClass>org.primefaces.component.layout.LayoutHandler</componentHandlerClass>
-	<componentType>org.primefaces.component.Layout</componentType>
-	<componentFamily>org.primefaces.component</componentFamily>
-	<rendererType>org.primefaces.component.LayoutRenderer</rendererType>
-	<rendererClass>org.primefaces.component.layout.LayoutRenderer</rendererClass>
+	<tagClass>org.primefaces.ui.component.layout.LayoutTag</tagClass>
+	<componentClass>org.primefaces.ui.component.layout.Layout</componentClass>
+	<componentType>org.primefaces.ui.Layout</componentType>
+	<componentFamily>org.primefaces.ui</componentFamily>
+	<rendererType>org.primefaces.ui.component.LayoutRenderer</rendererType>
+	<rendererClass>org.primefaces.ui.component.layout.LayoutRenderer</rendererClass>
 	<parent>javax.faces.component.UIPanel</parent>
 	<attributes>
 		&standard_uicomponent_attributes;
@@ -24,99 +23,43 @@
 			<description>Specifies if the layout will be created for whole page.</description>
 		</attribute>
 		<attribute>
-			<name>style</name>
+			<name>width</name>
 			<required>false</required>
-			<type>java.lang.String</type>
-			<description>Style to apply to container element. This is only applicable for element based layouts.</description>
+			<type>java.lang.Integer</type>
+			<defaultValue>java.lang.Integer.MIN_VALUE</defaultValue>
+			<description>Width in pixels.</description>
 		</attribute>
 		<attribute>
-			<name>styleClass</name>
+			<name>height</name>
 			<required>false</required>
-			<type>java.lang.String</type>
-			<description>Style to apply to container element. This is only applicable for element based layouts.</description>
+			<type>java.lang.Integer</type>
+			<defaultValue>java.lang.Integer.MIN_VALUE</defaultValue>
+			<description>Height in pixels.</description>
 		</attribute>
 		<attribute>
-			<name>closeTitle</name>
+			<name>minWidth</name>
 			<required>false</required>
-			<type>java.lang.String</type>
-			<description>Title label for the close button of closable units.</description>
+			<type>java.lang.Integer</type>
+			<defaultValue>java.lang.Integer.MIN_VALUE</defaultValue>
+			<description>Minimum width in pixels.</description>
 		</attribute>
 		<attribute>
-			<name>collapseTitle</name>
+			<name>minHeight</name>
 			<required>false</required>
-			<type>java.lang.String</type>
-			<description>Title label for the collapse button of collapsible units.</description>
-		</attribute>
-		<attribute>
-			<name>expandTitle</name>
-			<required>false</required>
-			<type>java.lang.String</type>
-			<description>Title label for the expande button of collapsible units.</description>
-		</attribute>
-		<attribute>
-			<name>closeListener</name>
-			<required>false</required>
-			<type>javax.el.MethodExpression</type>
-			<method-signature>void closeListener(org.primefaces.event.CloseEvent)</method-signature>
-			<description>A server side listener to process a CloseEvent</description>
-		</attribute>
-		<attribute>
-			<name>onCloseUpdate</name>
-			<required>false</required>
-			<type>java.lang.String</type>
-			<description>Id(s) of components to update after ajax closeListener is processed and unit is closed</description>
-		</attribute>
-		<attribute>
-			<name>toggleListener</name>
-			<required>false</required>
-			<type>javax.el.MethodExpression</type>
-			<method-signature>void toggleListener(org.primefaces.event.ToggleEvent)</method-signature>
-			<description>A server side listener to process a ToggleEvent</description>
-		</attribute>
-		<attribute>
-			<name>onToggleUpdate</name>
-			<required>false</required>
-			<type>java.lang.String</type>
-			<description>Id(s) of components to update after ajax toggleListener is processed and unit is toggled</description>
-		</attribute>
-		<attribute>
-			<name>resizeListener</name>
-			<required>false</required>
-			<type>javax.el.MethodExpression</type>
-			<method-signature>void resizeListener(org.primefaces.event.ResizeEvent)</method-signature>
-			<description>A server side listener to process a ResizeEvent</description>
-		</attribute>
-		<attribute>
-			<name>onResizeUpdate</name>
-			<required>false</required>
-			<type>java.lang.String</type>
-			<description>Id(s) of components to update after ajax resizelistener is processed and unit is resized</description>
-		</attribute>
-		<attribute>
-			<name>onResizeComplete</name>
-			<required>false</required>
-			<type>java.lang.String</type>
-			<description>Client side callback to invoke after resizeListener is invoked.</description>
-		</attribute>
-		<attribute>
-			<name>onCloseComplete</name>
-			<required>false</required>
-			<type>java.lang.String</type>
-			<description>Client side callback to invoke after closeListener is invoked.</description>
-		</attribute>
-		<attribute>
-			<name>onToggleComplete</name>
-			<required>false</required>
-			<type>java.lang.String</type>
-			<description>Client side callback to invoke after toggleListener is invoked.</description>
+			<type>java.lang.Integer</type>
+			<defaultValue>java.lang.Integer.MIN_VALUE</defaultValue>
+			<description>Minimum height in pixels.</description>
 		</attribute>
 	</attributes>
 	<resources>
 		<resource>
-			<name>/yui/resize/assets/skins/sam/resize.css</name>
+			<name>/yui/reset-fonts-grids/reset-fonts-grids.css</name>
 		</resource>
 		<resource>
-			<name>/primefaces/layout/layout.css</name>
+			<name>/yui/assets/skins/sam/resize.css</name>
+		</resource>
+		<resource>
+			<name>/yui/layout/assets/skins/sam/layout.css</name>
 		</resource>
 		<resource>
 			<name>/yui/utilities/utilities.js</name>
@@ -125,13 +68,7 @@
 			<name>/yui/resize/resize-min.js</name>
 		</resource>
 		<resource>
-			<name>/jquery/jquery.js</name>
-		</resource>
-		<resource>
-			<name>/primefaces/core/core.js</name>
-		</resource>
-		<resource>
-			<name>/primefaces/layout/layout.js</name>
+			<name>/yui/layout/layout-min.js</name>
 		</resource>
 	</resources>
 </component>

@@ -4,10 +4,10 @@
 ]>
 <component>
 	<tag>navBarControl</tag>
-	<tagClass>org.primefaces.touch.component.navbarcontrol.NavBarControlTag</tagClass>
-	<componentClass>org.primefaces.touch.component.navbarcontrol.NavBarControl</componentClass>
-	<componentType>org.primefaces.touch.NavBarControl</componentType>
-	<componentFamily>org.primefaces.touch</componentFamily>
+	<tagClass>org.primefaces.ui.touch.component.navbarcontrol.NavBarControlTag</tagClass>
+	<componentClass>org.primefaces.ui.touch.component.navbarcontrol.NavBarControl</componentClass>
+	<componentType>org.primefaces.ui.touch.NavBarControl</componentType>
+	<componentFamily>org.primefaces.ui.touch</componentFamily>
 	<parent>javax.faces.component.UIComponentBase</parent>
 	<attributes>
 		&standard_uicomponent_attributes;

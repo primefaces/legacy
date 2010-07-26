@@ -5,18 +5,13 @@
 ]>
 <component>
 	<tag>poll</tag>
-	<tagClass>org.primefaces.component.poll.PollTag</tagClass>
-	<componentClass>org.primefaces.component.poll.Poll</componentClass>
-	<componentType>org.primefaces.component.Poll</componentType>
-	<componentFamily>org.primefaces.component</componentFamily>
-	<rendererType>org.primefaces.component.PollRenderer</rendererType>
-	<rendererClass>org.primefaces.component.poll.PollRenderer</rendererClass>
+	<tagClass>org.primefaces.ui.component.poll.PollTag</tagClass>
+	<componentClass>org.primefaces.ui.component.poll.Poll</componentClass>
+	<componentType>org.primefaces.ui.Poll</componentType>
+	<componentFamily>org.primefaces</componentFamily>
+	<rendererType>org.primefaces.ui.component.PollRenderer</rendererType>
+	<rendererClass>org.primefaces.ui.component.poll.PollRenderer</rendererClass>
 	<parent>javax.faces.component.UICommand</parent>
-	<interfaces>
-		<interface>
-			<name>org.primefaces.component.api.AjaxSource</name>
-		</interface>
-	</interfaces>
 	<attributes>
 		&standard_uicomponent_attributes;
 		&widget_var_attribute;
@@ -56,83 +51,13 @@
 			<defaultValue>false</defaultValue>
 			<ignoreInComponent>true</ignoreInComponent>
 		</attribute>
-		<attribute>
-			<name>onstart</name>
-			<required>false</required>
-			<type>java.lang.String</type>
-			<description>
-				Javascript event to be called before ajax request begins.
-			</description>
-		</attribute>
-		<attribute>
-			<name>oncomplete</name>
-			<required>false</required>
-			<type>java.lang.String</type>
-			<description>
-				Javascript event to be called when ajax request is completed.
-			</description>
-		</attribute>
-		<attribute>
-			<name>process</name>
-			<required>false</required>
-			<type>java.lang.String</type>
-			<description>
-				Comma seperated list of clientIds that will be processed partially in JSF lifecycle instead of the whole component tree.
-			</description>
-		</attribute>
-		<attribute>
-			<name>onerror</name>
-			<required>false</required>
-			<type>java.lang.String</type>
-			<description>
-				Javascript event handler to be called when ajax request fails.
-			</description>
-		</attribute>
-		<attribute>
-			<name>onsuccess</name>
-			<required>false</required>
-			<type>java.lang.String</type>
-			<description>
-				Javascript event handler to be called when ajax request succeeds.
-			</description>
-		</attribute>
-		<attribute>
-			<name>global</name>
-			<required>false</required>
-			<type>java.lang.Boolean</type>
-			<defaultValue>true</defaultValue>
-			<description>
-				Global ajax requests are listened by ajaxStatus component, setting global to false will not trigger ajaxStatus.
-			</description>
-		</attribute>
-		<attribute>
-			<name>async</name>
-			<required>false</required>
-			<type>java.lang.Boolean</type>
-			<defaultValue>false</defaultValue>
-			<description>
-				When set to true, ajax requests will not be queued.
-			</description>
-		</attribute>
-		<attribute>
-			<name>autoStart</name>
-			<required>false</required>
-			<type>java.lang.Boolean</type>
-			<defaultValue>true</defaultValue>
-			<description>
-				In autoStart mode, polling starts automatically on page load, to start polling on demand set to false.
-			</description>
-		</attribute>
 	</attributes>
 	<resources>
-		<resource>
-			<name>/yui/utilities/utilities.js</name>
-		</resource>
 		<resource>
 			<name>/jquery/jquery.js</name>
 		</resource>
 		<resource>
-			<name>/primefaces/core/core.js</name>
+			<name>/primefaces/ajax/ajax.js</name>
 		</resource>
 		<resource>
 			<name>/primefaces/poll/poll.js</name>

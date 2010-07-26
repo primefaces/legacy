@@ -5,10 +5,10 @@
 ]>
 <component>
 	<tag>chartSeries</tag>
-	<tagClass>org.primefaces.component.chart.series.ChartSeriesTag</tagClass>
-	<componentClass>org.primefaces.component.chart.series.ChartSeries</componentClass>
-	<componentType>org.primefaces.component.chart.ChartSeries</componentType>
-	<componentFamily>org.primefaces.component</componentFamily>
+	<tagClass>org.primefaces.ui.component.chart.series.ChartSeriesTag</tagClass>
+	<componentClass>org.primefaces.ui.component.chart.series.ChartSeries</componentClass>
+	<componentType>org.primefaces.ui.chart.ChartSeries</componentType>
+	<componentFamily>org.primefaces</componentFamily>
 	<parent>javax.faces.component.UIOutput</parent>
 	<attributes>
 		&standard_uicomponent_attributes;

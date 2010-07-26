@@ -5,12 +5,12 @@
 ]>
 <component>
 	<tag>outputPanel</tag>
-	<tagClass>org.primefaces.component.outputpanel.OutputPanelTag</tagClass>
-	<componentClass>org.primefaces.component.outputpanel.OutputPanel</componentClass>
-	<componentType>org.primefaces.component.OutputPanel</componentType>
-	<componentFamily>org.primefaces.component</componentFamily>
-	<rendererType>org.primefaces.component.OutputPanelRenderer</rendererType>
-	<rendererClass>org.primefaces.component.outputpanel.OutputPanelRenderer</rendererClass>
+	<tagClass>org.primefaces.ui.component.outputpanel.OutputPanelTag</tagClass>
+	<componentClass>org.primefaces.ui.component.outputpanel.OutputPanel</componentClass>
+	<componentType>org.primefaces.ui.OutputPanel</componentType>
+	<componentFamily>org.primefaces.ui</componentFamily>
+	<rendererType>org.primefaces.ui.component.OutputPanelRenderer</rendererType>
+	<rendererClass>org.primefaces.ui.component.outputpanel.OutputPanelRenderer</rendererClass>
 	<parent>javax.faces.component.UIPanel</parent>
 	<attributes>
 		&standard_uicomponent_attributes;
@@ -25,13 +25,6 @@
 			<required>false</required>
 			<type>java.lang.String</type>
 			<description>StyleClass of the panel</description>
-		</attribute>
-		<attribute>
-			<name>layout</name>
-			<required>false</required>
-			<type>java.lang.String</type>
-			<defaultValue>inline</defaultValue>
-			<description>Layout of the panel, valid values are 'inline'(span) and 'block'(div).</description>
 		</attribute>
 	</attributes>
 </component>

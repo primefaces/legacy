@@ -5,24 +5,16 @@
 ]>
 <component>
 	<tag>stack</tag>
-	<tagClass>org.primefaces.component.stack.StackTag</tagClass>
-	<componentClass>org.primefaces.component.stack.Stack</componentClass>
-	<componentType>org.primefaces.component.Stack</componentType>
-	<componentFamily>org.primefaces.component</componentFamily>
-	<rendererType>org.primefaces.component.StackRenderer</rendererType>
-	<rendererClass>org.primefaces.component.stack.StackRenderer</rendererClass>
-	<parent>org.primefaces.component.menu.AbstractMenu</parent>
+	<tagClass>org.primefaces.ui.component.stack.StackTag</tagClass>
+	<componentClass>org.primefaces.ui.component.stack.Stack</componentClass>
+	<componentType>org.primefaces.ui.Stack</componentType>
+	<componentFamily>org.primefaces.ui</componentFamily>
+	<rendererType>org.primefaces.ui.component.StackRenderer</rendererType>
+	<rendererClass>org.primefaces.ui.component.stack.StackRenderer</rendererClass>
+	<parent>javax.faces.component.UIPanel</parent>
 	<attributes>
 		&standard_uicomponent_attributes;
 		&widget_var_attribute;
-		<attribute>
-			<name>model</name>
-			<required>false</required>
-			<type>org.primefaces.model.MenuModel</type>
-			<description>
-				An org.primefaces.model.MenuModel instance to build menu dynamically.
-			</description>
-		</attribute>
 		<attribute>
 			<name>icon</name>
 			<required>false</required>
@@ -59,9 +51,6 @@
 		</resource>
 		<resource>
 			<name>/jquery/jquery.js</name>
-		</resource>
-		<resource>
-			<name>/primefaces/core/core.js</name>
 		</resource>
 		<resource>
 			<name>/primefaces/stack/stack.js</name>

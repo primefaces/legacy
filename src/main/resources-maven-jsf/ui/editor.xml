@@ -8,12 +8,12 @@
 ]>
 <component>
 	<tag>editor</tag>
-	<tagClass>org.primefaces.component.editor.EditorTag</tagClass>
-	<componentClass>org.primefaces.component.editor.Editor</componentClass>
-	<componentType>org.primefaces.component.Editor</componentType>
-	<componentFamily>org.primefaces.component</componentFamily>
-	<rendererType>org.primefaces.component.EditorRenderer</rendererType>
-	<rendererClass>org.primefaces.component.editor.EditorRenderer</rendererClass>
+	<tagClass>org.primefaces.ui.component.editor.EditorTag</tagClass>
+	<componentClass>org.primefaces.ui.component.editor.Editor</componentClass>
+	<componentType>org.primefaces.ui.Editor</componentType>
+	<componentFamily>org.primefaces</componentFamily>
+	<rendererType>org.primefaces.ui.component.EditorRenderer</rendererType>
+	<rendererClass>org.primefaces.ui.component.editor.EditorRenderer</rendererClass>
 	<parent>javax.faces.component.UIInput</parent>
 	<attributes>
 		&input_component_attributes;
@@ -64,19 +64,16 @@
 			<name>/yui/menu/assets/skins/sam/menu.css</name>
 		</resource>
 		<resource>
-			<name>/yui/button/assets/skins/sam/button.css</name>
+			<name>/yui/assets/skins/sam/button.css</name>
 		</resource>
 		<resource>
-			<name>/yui/resize/assets/skins/sam/resize.css</name>
+			<name>/yui/assets/skins/sam/resize.css</name>
 		</resource>
 		<resource>
 			<name>/yui/container/assets/skins/sam/container.css</name>
 		</resource>
 		<resource>
 			<name>/yui/editor/assets/skins/sam/editor.css</name>
-		</resource>
-		<resource>
-			<name>/jquery/jquery.js</name>
 		</resource>
 		<resource>
 			<name>/yui/utilities/utilities.js</name>
@@ -94,13 +91,10 @@
 			<name>/yui/editor/editor-min.js</name>
 		</resource>
 		<resource>
-			<name>/yui/resize/resize-min.js</name>
-		</resource>
-		<resource>
-			<name>/primefaces/core/core.js</name>
-		</resource>
-		<resource>
 			<name>/primefaces/editor/editor.js</name>
+		</resource>
+		<resource>
+			<name>/yui/resize/resize-min.js</name>
 		</resource>
 	</resources>
 </component>

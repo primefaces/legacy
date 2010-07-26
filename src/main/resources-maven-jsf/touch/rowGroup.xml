@@ -4,12 +4,12 @@
 ]>
 <component>
 	<tag>rowGroup</tag>
-	<tagClass>org.primefaces.touch.component.rowgroup.RowGroupTag</tagClass>
-	<componentClass>org.primefaces.touch.component.rowgroup.RowGroup</componentClass>
-	<componentType>org.primefaces.touch.RowGroup</componentType>
-	<componentFamily>org.primefaces.touch</componentFamily>
-	<rendererType>org.primefaces.touch.component.RowGroupRenderer</rendererType>
-	<rendererClass>org.primefaces.touch.component.rowgroup.RowGroupRenderer</rendererClass>
+	<tagClass>org.primefaces.ui.touch.component.rowgroup.RowGroupTag</tagClass>
+	<componentClass>org.primefaces.ui.touch.component.rowgroup.RowGroup</componentClass>
+	<componentType>org.primefaces.ui.touch.RowGroup</componentType>
+	<componentFamily>org.primefaces.ui.touch</componentFamily>
+	<rendererType>org.primefaces.ui.touch.component.RowGroupRenderer</rendererType>
+	<rendererClass>org.primefaces.ui.touch.component.rowgroup.RowGroupRenderer</rendererClass>
 	<parent>javax.faces.component.UIComponentBase</parent>
 	<attributes>
 		&standard_uicomponent_attributes;
@@ -18,13 +18,6 @@
 			<required>false</required>
 			<type>java.lang.String</type>
 			<description>Optional title of the row group.</description>
-		</attribute>
-		<attribute>
-			<name>display</name>
-			<required>false</required>
-			<type>java.lang.String</type>
-			<defaultValue>rounded</defaultValue>
-			<description>Display type of the rowgroup.</description>
 		</attribute>
 	</attributes>
 </component>

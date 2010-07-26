@@ -4,12 +4,12 @@
 ]>
 <component>
 	<tag>ajaxStatus</tag>
-	<tagClass>org.primefaces.component.ajaxstatus.AjaxStatusTag</tagClass>
-	<componentClass>org.primefaces.component.ajaxstatus.AjaxStatus</componentClass>
-	<componentType>org.primefaces.component.AjaxStatus</componentType>
-	<componentFamily>org.primefaces.component</componentFamily>
-	<rendererType>org.primefaces.component.AjaxStatusRenderer</rendererType>
-	<rendererClass>org.primefaces.component.ajaxstatus.AjaxStatusRenderer</rendererClass>
+	<tagClass>org.primefaces.ui.component.ajaxstatus.AjaxStatusTag</tagClass>
+	<componentClass>org.primefaces.ui.component.ajaxstatus.AjaxStatus</componentClass>
+	<componentType>org.primefaces.ui.AjaxStatus</componentType>
+	<componentFamily>org.primefaces.ui</componentFamily>
+	<rendererType>org.primefaces.ui.component.AjaxStatusRenderer</rendererType>
+	<rendererClass>org.primefaces.ui.component.ajaxstatus.AjaxStatusRenderer</rendererClass>
 	<parent>javax.faces.component.UIComponentBase</parent>
 	<attributes>
 		&standard_uicomponent_attributes;
@@ -85,9 +85,6 @@
 		</resource>
 		<resource>
 			<name>/jquery/jquery.js</name>
-		</resource>
-		<resource>
-			<name>/primefaces/core/core.js</name>
 		</resource>
 		<resource>
 			<name>/primefaces/ajaxstatus/ajaxstatus.js</name>

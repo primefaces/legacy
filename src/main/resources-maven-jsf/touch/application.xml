@@ -5,12 +5,12 @@
 ]>
 <component>
 	<tag>application</tag>
-	<tagClass>org.primefaces.touch.component.application.ApplicationTag</tagClass>
-	<componentClass>org.primefaces.touch.component.application.Application</componentClass>
-	<componentType>org.primefaces.touch.Application</componentType>
-	<componentFamily>org.primefaces.touch</componentFamily>
-	<rendererType>org.primefaces.touch.component.ApplicationRenderer</rendererType>
-	<rendererClass>org.primefaces.touch.component.application.ApplicationRenderer</rendererClass>
+	<tagClass>org.primefaces.ui.touch.component.application.ApplicationTag</tagClass>
+	<componentClass>org.primefaces.ui.touch.component.application.Application</componentClass>
+	<componentType>org.primefaces.ui.touch.Application</componentType>
+	<componentFamily>org.primefaces.ui.touch</componentFamily>
+	<rendererType>org.primefaces.ui.touch.component.ApplicationRenderer</rendererType>
+	<rendererClass>org.primefaces.ui.touch.component.application.ApplicationRenderer</rendererClass>
 	<parent>javax.faces.component.UIComponentBase</parent>
 	<attributes>
 		&standard_uicomponent_attributes;
@@ -30,6 +30,9 @@
 	</attributes>
 	<resources>
 		<resource>
+			<name>/jquery/plugins/jqtouch/jqtouch.min.css</name>
+		</resource>
+		<resource>
 			<name>/yui/utilities/utilities.js</name>
 		</resource>
 		<resource>
@@ -37,9 +40,6 @@
 		</resource>
 		<resource>
 			<name>/jquery/plugins/jqtouch/jqtouch.min.js</name>
-		</resource>
-		<resource>
-			<name>/jquery/plugins/jqtouch/jqtouch.transitions.js</name>
 		</resource>
 		<resource>
 			<name>/primefaces/core/core.js</name>

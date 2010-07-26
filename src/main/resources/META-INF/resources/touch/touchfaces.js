@@ -3,23 +3,15 @@ if(PrimeFaces.touch == undefined) PrimeFaces.touch = {};
 
 PrimeFaces.touch.Application = function(config) {
 	this.cfg = config;
-	this.cfg.preloadImages = [
-		                         config.themePath + '/img/grayButton.png',
-		                         config.themePath + '/img/whiteButton.png',
-		                         config.themePath + '/img/loading.gif'
-	                         ];
+	var themePath = config.themePath;
+	this.cfg.preloadImage = [themePath + '/img/chevron_white.png',
+	                         themePath + '/img/bg_row_select.gif',
+	                         themePath + '/img/back_button.png',
+	                         themePath + '/img/back_button_clicked.png',
+	                         themePath + '/img/button_clicked.png',
+	                         themePath + '/img/grayButton.png',
+	                         themePath + '/img/whiteButton.png',
+	                         themePath + '/img/loading.gif'];
 	
-	this.cfg.slideSelector = '#touchfaces_primefaces';
-	
-    this.jqt = new jQuery.jQTouch(this.cfg);
-}
-
-PrimeFaces.touch.Application.prototype.goTo = function(viewId, effect) {
-	this.jqt.goTo('#' + viewId, effect);
-	
-	jQuery('.active').removeClass('active');
-}
-
-PrimeFaces.touch.Application.prototype.goBack = function() {
-	this.jqt.goBack();
+     jQuery.jQTouch(this.cfg);
 }

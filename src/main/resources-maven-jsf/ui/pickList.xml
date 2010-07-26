@@ -7,12 +7,12 @@
 ]>
 <component>
 	<tag>pickList</tag>
-	<tagClass>org.primefaces.component.picklist.PickListTag</tagClass>
-	<componentClass>org.primefaces.component.picklist.PickList</componentClass>
-	<componentType>org.primefaces.component.PickList</componentType>
-	<componentFamily>org.primefaces.component</componentFamily>
-	<rendererType>org.primefaces.component.PickListRenderer</rendererType>
-	<rendererClass>org.primefaces.component.picklist.PickListRenderer</rendererClass>
+	<tagClass>org.primefaces.ui.component.picklist.PickListTag</tagClass>
+	<componentClass>org.primefaces.ui.component.picklist.PickList</componentClass>
+	<componentType>org.primefaces.ui.PickList</componentType>
+	<componentFamily>org.primefaces.ui</componentFamily>
+	<rendererType>org.primefaces.ui.component.PickListRenderer</rendererType>
+	<rendererClass>org.primefaces.ui.component.picklist.PickListRenderer</rendererClass>
 	<parent>javax.faces.component.UIInput</parent>
 	<attributes>
 		&input_component_attributes;
@@ -53,13 +53,7 @@
 			<name>/primefaces/picklist/picklist.css</name>
 		</resource>
 		<resource>
-			<name>/yui/utilities/utilities.js</name>
-		</resource>
-		<resource>
 			<name>/jquery/jquery.js</name>
-		</resource>
-		<resource>
-			<name>/primefaces/core/core.js</name>
 		</resource>
 		<resource>
 			<name>/primefaces/picklist/picklist.js</name>

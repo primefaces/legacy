@@ -7,12 +7,12 @@
 ]>
 <component>
 	<tag>imageCropper</tag>
-	<tagClass>org.primefaces.component.imagecropper.ImageCropperTag</tagClass>
-	<componentClass>org.primefaces.component.imagecropper.ImageCropper</componentClass>
-	<componentType>org.primefaces.component.ImageCropper</componentType>
-	<componentFamily>org.primefaces.component</componentFamily>
-	<rendererType>org.primefaces.component.ImageCropperRenderer</rendererType>
-	<rendererClass>org.primefaces.component.imagecropper.ImageCropperRenderer</rendererClass>
+	<tagClass>org.primefaces.ui.component.imagecropper.ImageCropperTag</tagClass>
+	<componentClass>org.primefaces.ui.component.imagecropper.ImageCropper</componentClass>
+	<componentType>org.primefaces.ui.ImageCropper</componentType>
+	<componentFamily>org.primefaces</componentFamily>
+	<rendererType>org.primefaces.ui.component.ImageCropperRenderer</rendererType>
+	<rendererClass>org.primefaces.ui.component.imagecropper.ImageCropperRenderer</rendererClass>
 	<parent>javax.faces.component.UIInput</parent>
 	<attributes>
 		&input_component_attributes;
@@ -28,10 +28,10 @@
 	</attributes>
 	<resources>
 		<resource>
-			<name>/yui/resize/assets/skins/sam/resize.css</name>
+			<name>/yui/assets/skins/sam/resize.css</name>
 		</resource>
 		<resource>
-			<name>/yui/imagecropper/assets/skins/sam/imagecropper.css</name>
+			<name>/yui/assets/skins/sam/imagecropper.css</name>
 		</resource>
 		<resource>
 			<name>/yui/utilities/utilities.js</name>
@@ -41,9 +41,6 @@
 		</resource>
 		<resource>
 			<name>/yui/imagecropper/imagecropper-min.js</name>
-		</resource>
-		<resource>
-			<name>/primefaces/core/core.js</name>
 		</resource>
 		<resource>
 			<name>/primefaces/imagecropper/imagecropper.js</name>

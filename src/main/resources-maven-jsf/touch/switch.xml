@@ -6,12 +6,12 @@
 ]>
 <component>
 	<tag>switch</tag>
-	<tagClass>org.primefaces.touch.component.inputswitch.InputSwitchTag</tagClass>
-	<componentClass>org.primefaces.touch.component.inputswitch.InputSwitch</componentClass>
-	<componentType>org.primefaces.touch.InputSwitch</componentType>
-	<componentFamily>org.primefaces.touch</componentFamily>
-	<rendererType>org.primefaces.touch.component.InputSwitchRenderer</rendererType>
-	<rendererClass>org.primefaces.touch.component.inputswitch.InputSwitchRenderer</rendererClass>
+	<tagClass>org.primefaces.ui.touch.component.inputswitch.InputSwitchTag</tagClass>
+	<componentClass>org.primefaces.ui.touch.component.inputswitch.InputSwitch</componentClass>
+	<componentType>org.primefaces.ui.touch.InputSwitch</componentType>
+	<componentFamily>org.primefaces.ui.touch</componentFamily>
+	<rendererType>org.primefaces.ui.touch.component.InputSwitchRenderer</rendererType>
+	<rendererClass>org.primefaces.ui.touch.component.inputswitch.InputSwitchRenderer</rendererClass>
 	<parent>javax.faces.component.UIInput</parent>
 	<attributes>
 		&input_component_attributes;

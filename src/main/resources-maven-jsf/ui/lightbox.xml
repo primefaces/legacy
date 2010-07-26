@@ -7,12 +7,12 @@
 ]>
 <component>
 	<tag>lightBox</tag>
-	<tagClass>org.primefaces.component.lightbox.LightBoxTag</tagClass>
-	<componentClass>org.primefaces.component.lightbox.LightBox</componentClass>
-	<componentType>org.primefaces.component.LightBox</componentType>
-	<componentFamily>org.primefaces.component</componentFamily>
-	<rendererType>org.primefaces.component.LightBoxRenderer</rendererType>
-	<rendererClass>org.primefaces.component.lightbox.LightBoxRenderer</rendererClass>
+	<tagClass>org.primefaces.ui.component.lightbox.LightBoxTag</tagClass>
+	<componentClass>org.primefaces.ui.component.lightbox.LightBox</componentClass>
+	<componentType>org.primefaces.ui.LightBox</componentType>
+	<componentFamily>org.primefaces.ui</componentFamily>
+	<rendererType>org.primefaces.ui.component.LightBoxRenderer</rendererType>
+	<rendererClass>org.primefaces.ui.component.lightbox.LightBoxRenderer</rendererClass>
 	<parent>javax.faces.component.UIComponentBase</parent>
 	<attributes>
 		&standard_uicomponent_attributes;
@@ -154,15 +154,6 @@
 				  When true clicking outside of overlay will close lightbox.
 			</description>
 		</attribute>
-		<attribute>
-			<name>group</name>
-			<required>false</required>
-			<type>java.lang.Boolean</type>
-			<defaultValue>true</defaultValue>
-			<description>
-				Defines grouping, by default children belong to same group and switching is enabled.
-			</description>
-		</attribute>
 	</attributes>
 	<resources>
 		<resource>
@@ -176,9 +167,6 @@
 		</resource>
 		<resource>
 			<name>/jquery/plugins/lightbox/colorbox.js</name>
-		</resource>
-		<resource>
-			<name>/primefaces/core/core.js</name>
 		</resource>
 	</resources>
 </component>

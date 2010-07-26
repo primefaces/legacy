@@ -7,32 +7,16 @@
 ]>
 <component>
 	<tag>imageSwitch</tag>
-	<tagClass>org.primefaces.component.imageswitch.ImageSwitchTag</tagClass>
-	<componentClass>org.primefaces.component.imageswitch.ImageSwitch</componentClass>
-	<componentType>org.primefaces.component.ImageSwitch</componentType>
-	<componentFamily>org.primefaces.component</componentFamily>
-	<rendererType>org.primefaces.component.ImageSwitchRenderer</rendererType>
-	<rendererClass>org.primefaces.component.imageswitch.ImageSwitchRenderer</rendererClass>
+	<tagClass>org.primefaces.ui.component.imageswitch.ImageSwitchTag</tagClass>
+	<componentClass>org.primefaces.ui.component.imageswitch.ImageSwitch</componentClass>
+	<componentType>org.primefaces.ui.ImageSwitch</componentType>
+	<componentFamily>org.primefaces.ui</componentFamily>
+	<rendererType>org.primefaces.ui.component.ImageSwitchRenderer</rendererType>
+	<rendererClass>org.primefaces.ui.component.imageswitch.ImageSwitchRenderer</rendererClass>
 	<parent>javax.faces.component.UIComponentBase</parent>
 	<attributes>
 		&standard_uicomponent_attributes;
 		&widget_var_attribute;
-		<attribute>
-			<name>style</name>
-			<required>false</required>
-			<type>java.lang.String</type>
-			<description>
-				 Style of the container element.
-			</description>
-		</attribute>
-		<attribute>
-			<name>styleClass</name>
-			<required>false</required>
-			<type>java.lang.String</type>
-			<description>
-				 Style class of container element.
-			</description>
-		</attribute>
 		<attribute>
 			<name>effect</name>
 			<required>true</required>
@@ -69,13 +53,10 @@
 	</attributes>
 	<resources>
 		<resource>
-			<name>/yui/utilities/utilities.js</name>
-		</resource>
-		<resource>
 			<name>/jquery/jquery.js</name>
 		</resource>
 		<resource>
-			<name>/primefaces/core/core.js</name>
+			<name>/jquery/plugins/imageswitch/imageswitch.js</name>
 		</resource>
 		<resource>
 			<name>/primefaces/imageswitch/imageswitch.js</name>

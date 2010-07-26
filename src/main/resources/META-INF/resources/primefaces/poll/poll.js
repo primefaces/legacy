@@ -1,13 +1,21 @@
-PrimeFaces.widget.Poll = function(id, cfg) {
-	this.id = id;
+if(PrimeFaces == undefined) var PrimeFaces = {};
+if(PrimeFaces.widget == undefined) PrimeFaces.widget = {};
+
+PrimeFaces.widget.Poll = function(cfg) {
 	this.cfg = cfg;
-	
-	if(this.cfg.autoStart)
-		this.start();
+	this.start();
 }
 
 PrimeFaces.widget.Poll.prototype.start = function() {
-	this.timer = setInterval(this.cfg.fn, (this.cfg.frequency * 1000));
+	var cfg = this.cfg;
+	
+	this.timer = setInterval(
+			function() {
+				PrimeFaces.ajax.AjaxRequest(cfg.url, 
+							{formClientId:cfg.formClientId, partialSubmit:false}
+							,"update=" + cfg.update + "&" + cfg.clientId + "=" + cfg.clientId);
+		}
+		,(cfg.frequency * 1000));
 }
 
 PrimeFaces.widget.Poll.prototype.stop = function() {
