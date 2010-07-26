@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+//-->
+
+<!DOCTYPE component SYSTEM "../misc/component.dtd" [
+<!ENTITY standard_uicomponent_attributes		SYSTEM "../entities/standard_uicomponent_attributes.xml">
+<!ENTITY widget_var_attribute					SYSTEM "../entities/widget_var_attribute.xml">
+]>
+<component>
+	<tag>resizable</tag>
+	<tagClass>org.primefaces.ui.component.resizable.ResizableTag</tagClass>
+	<componentClass>org.primefaces.ui.component.resizable.Resizable</componentClass>
+	<componentType>org.primefaces.ui.Resizable</componentType>
+	<componentFamily>org.primefaces</componentFamily>
+	<rendererType>org.primefaces.ui.component.ResizableRenderer</rendererType>
+	<rendererClass>org.primefaces.ui.component.resizable.ResizableRenderer</rendererClass>
+	<parent>javax.faces.component.UIComponentBase</parent>
+	<attributes>
+		&standard_uicomponent_attributes;
+		&widget_var_attribute;
+
+		<attribute>
+			<name>proxy</name>
+			<required>false</required>
+			<type>java.lang.Boolean</type>
+			<defaultValue>false</defaultValue>
+			<description>Makes the resizable use a proxy</description>
+		</attribute>
+		<attribute>
+			<name>status</name>
+			<required>false</required>
+			<type>java.lang.Boolean</type>
+			<defaultValue>false</defaultValue>
+			<description>Shows the height and width of the resizing component</description>
+		</attribute>
+		<attribute>
+			<name>handles</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+			<description>Handles to use, any combination of 't', 'b', 'r', 'l', 'bl', 'br', 'tl', 'tr' is valid, shortcut "all" enables all handlers.</description>
+		</attribute>
+		<attribute>
+			<name>ghost</name>
+			<required>false</required>
+			<type>java.lang.Boolean</type>
+			<defaultValue>false</defaultValue>
+			<description>Displays a ghost effect.</description>
+		</attribute>
+		<attribute>
+			<name>knobHandles</name>
+			<required>false</required>
+			<type>java.lang.Boolean</type>
+			<defaultValue>false</defaultValue>
+			<description>Displays smaller handles</description>
+		</attribute>
+		<attribute>
+			<name>animate</name>
+			<required>false</required>
+			<type>java.lang.Boolean</type>
+			<defaultValue>false</defaultValue>
+			<description>Displays a ghost effect.</description>
+		</attribute>
+		<attribute>
+			<name>effect</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+			<description>Animation effect.</description>
+		</attribute>
+		<attribute>
+			<name>animateDuration</name>
+			<required>false</required>
+			<type>java.lang.Double</type>
+			<defaultValue>0.75</defaultValue>
+			<description>Duration of the animation.</description>
+		</attribute>
+	</attributes>
+	<resources>
+		<resource>
+			<name>/yui/assets/skins/sam/resize.css</name>
+		</resource>
+		<resource>
+			<name>/yui/utilities/utilities.js</name>
+		</resource>
+		<resource>
+			<name>/yui/resize/resize-min.js</name>
+		</resource>
+	</resources>
+</component>
