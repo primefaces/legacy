@@ -20,8 +20,7 @@
 </attribute>
 <attribute>
 	<name>rows</name>
-	<type>java.lang.Integer</type>
-	<defaultValue>0</defaultValue>
+	<type>int</type>
 	<ignoreInComponent>true</ignoreInComponent>
 	<description>
 		Number of rows to display per page
@@ -30,8 +29,7 @@
 <attribute>
 	<name>first</name>
 	<required>false</required>
-	<type>java.lang.Integer</type>
-	<defaultValue>0</defaultValue>
+	<type>int</type>
 	<ignoreInComponent>true</ignoreInComponent>
 	<description>
 		Index of the first row to be displayed

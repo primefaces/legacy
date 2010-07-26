@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+//-->
+
+<!DOCTYPE component SYSTEM "../misc/component.dtd" [
+<!ENTITY standard_uicomponent_attributes		SYSTEM "../entities/standard_uicomponent_attributes.xml">
+<!ENTITY output_component_attributes			SYSTEM "../entities/output_component_attributes.xml">
+<!ENTITY input_component_attributes				SYSTEM "../entities/input_component_attributes.xml">
+<!ENTITY widget_var_attribute					SYSTEM "../entities/widget_var_attribute.xml">
+]>
+<component>
+	<tag>imageCropper</tag>
+	<tagClass>org.primefaces.ui.component.imagecropper.ImageCropperTag</tagClass>
+	<componentClass>org.primefaces.ui.component.imagecropper.ImageCropper</componentClass>
+	<componentType>org.primefaces.ui.ImageCropper</componentType>
+	<componentFamily>org.primefaces</componentFamily>
+	<rendererType>org.primefaces.ui.component.ImageCropperRenderer</rendererType>
+	<rendererClass>org.primefaces.ui.component.imagecropper.ImageCropperRenderer</rendererClass>
+	<parent>javax.faces.component.UIInput</parent>
+	<attributes>
+		&input_component_attributes;
+		&widget_var_attribute;
+		<attribute>
+			<name>image</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+			<description>
+				Path of the image to be cropped
+			</description>
+		</attribute>
+	</attributes>
+	<resources>
+		<resource>
+			<name>/yui/assets/skins/sam/resize.css</name>
+		</resource>
+		<resource>
+			<name>/yui/assets/skins/sam/imagecropper.css</name>
+		</resource>
+		<resource>
+			<name>/yui/utilities/utilities.js</name>
+		</resource>
+		<resource>
+			<name>/yui/resize/resize-min.js</name>
+		</resource>
+		<resource>
+			<name>/yui/imagecropper/imagecropper-beta-min.js</name>
+		</resource>
+		<resource>
+			<name>/yuiext/imagecropper/imagecropper.js</name>
+		</resource>
+	</resources>
+</component>
