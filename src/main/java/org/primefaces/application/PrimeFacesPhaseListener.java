@@ -22,9 +22,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import javax.faces.FacesException;
-import javax.faces.application.FacesMessage;
 import javax.faces.application.StateManager;
-import javax.faces.application.StateManager.SerializedView;
 import javax.faces.component.ContextCallback;
 import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
@@ -53,11 +51,7 @@ public class PrimeFacesPhaseListener implements PhaseListener {
 	private static final Logger logger = Logger.getLogger(PrimeFacesPhaseListener.class.getName());
 
 	public void afterPhase(PhaseEvent phaseEvent) {
-		try {
-			RequestContext.getCurrentInstance().release();
-		}catch(NullPointerException exception) {
-			logger.info("Warning: RequestContext is already null before releasing. This means you have more than one PrimeFaces jar in your classpath.");
-		}
+		RequestContext.getCurrentInstance().release();
 	}
 	
 	public void beforePhase(PhaseEvent phaseEvent) {
@@ -71,15 +65,11 @@ public class PrimeFacesPhaseListener implements PhaseListener {
 		}
 
 		if(isAjaxRequest) {
-			try {
-				handleAjaxRequest(facesContext);
-			} catch (Exception e) {
-				throw new FacesException(e);
-			}
+			handleAjaxRequest(facesContext);
 		}
 	}
 	
-	private void handleAjaxRequest(FacesContext facesContext) throws IOException {
+	private void handleAjaxRequest(FacesContext facesContext) {
 		RequestContext requestContext = RequestContext.getCurrentInstance();
 		Map<String,String> params = facesContext.getExternalContext().getRequestParameterMap();
 		String viewNamespace = ApplicationUtils.getViewNamespace(facesContext);
@@ -100,22 +90,17 @@ public class PrimeFacesPhaseListener implements PhaseListener {
 			
 			ResponseWriter writer = facesContext.getResponseWriter();
 			try {
-				writer.write("<?xml version=\"1.0\" encoding=\"" + response.getCharacterEncoding() + "\"?>");
 				writer.write("<partialResponse>");
 				
-				//Encode partial output
 				if(idsToUpdate != null) {
 					writeComponents(facesContext, idsToUpdate, viewNamespace);
 				}
 				
-				//Encode viewstate
 				writeState(facesContext);
 				
-				//Send request callback parameters
-				FacesMessage.Severity maximumSeverity = facesContext.getMaximumSeverity();
-				boolean validationFailed = (maximumSeverity != null && maximumSeverity.equals(FacesMessage.SEVERITY_ERROR));
-				requestContext.addCallbackParam("validationFailed", validationFailed);
-				writeCallbackParams(facesContext, requestContext);
+				if(!requestContext.getCallbackParams().isEmpty()) {
+					writeCallbackParams(facesContext, requestContext);
+				}
 				
 				writer.write("</partialResponse>");
 			}catch(IOException exception) {
@@ -132,7 +117,6 @@ public class PrimeFacesPhaseListener implements PhaseListener {
 		}
 		
 		facesContext.responseComplete();
-		facesContext.getResponseWriter().close();
 	}
 	
 	private String[] getIdsToUpdate(FacesContext facesContext, RequestContext requestContext) {
@@ -169,7 +153,10 @@ public class PrimeFacesPhaseListener implements PhaseListener {
 		facesContext.setViewRoot(partialView.getBase());	
 		partialView = null;
 	}
-	
+
+	/**
+	 * Write state to sync with client
+	 */
 	private void writeState(FacesContext facesContext) throws IOException {
 		ResponseWriter writer = facesContext.getResponseWriter();
 		
@@ -177,10 +164,7 @@ public class PrimeFacesPhaseListener implements PhaseListener {
 		RendererUtils.startCDATA(facesContext);
 		
 		StateManager stateManager = facesContext.getApplication().getStateManager();
-		SerializedView serializedView = stateManager.saveSerializedView(facesContext);
-		Object stateArray[] = {serializedView.getStructure(), serializedView.getState()};
-
-		stateManager.writeState(facesContext, stateArray);
+		stateManager.writeState(facesContext, stateManager.saveView(facesContext));
 		
 		RendererUtils.endCDATA(facesContext);
 		writer.write("</state>");
@@ -310,7 +294,6 @@ public class PrimeFacesPhaseListener implements PhaseListener {
 		try {
 			ServletResponse response = (ServletResponse) facesContext.getExternalContext().getResponse();
 			ServletRequest request = (ServletRequest) facesContext.getExternalContext().getRequest();
-			response.setCharacterEncoding(request.getCharacterEncoding());
 			
 			RenderKit renderKit = facesContext.getRenderKit();
 			ResponseWriter responseWriter = renderKit.createResponseWriter(response.getWriter(), null, request.getCharacterEncoding());

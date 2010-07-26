@@ -19,8 +19,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import javax.faces.context.ExternalContext;
 
@@ -28,8 +26,6 @@ import org.primefaces.util.Constants;
 
 public class RequestContextImpl extends RequestContext {
 
-	private static final Logger logger = Logger.getLogger(RequestContextImpl.class.getName());
-	
 	private final static String CALLBACK_PARAMS_KEY = "CALLBACK_PARAMS";
 	private final static String PARTIAL_UPDATE_TARGETS_KEY = "PARTIAL_UPDATE_TARGETS_KEY";
 	
@@ -54,10 +50,6 @@ public class RequestContextImpl extends RequestContext {
 		attributes = null;
 		
 		setCurrentInstance(null);
-		
-		if(logger.isLoggable(Level.FINE)) {
-			logger.fine("RequestContext is released");
-		}
 	}
 
 	@Override
