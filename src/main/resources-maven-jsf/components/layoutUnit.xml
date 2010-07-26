@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE component SYSTEM "../misc/component.dtd" [
+<!ENTITY standard_uicomponent_attributes		SYSTEM "../entities/standard_uicomponent_attributes.xml">
+]>
+<component>
+	<tag>layoutUnit</tag>
+	<tagClass>org.primefaces.ui.component.layout.LayoutUnitTag</tagClass>
+	<componentClass>org.primefaces.ui.component.layout.LayoutUnit</componentClass>
+	<componentType>org.primefaces.ui.LayoutUnit</componentType>
+	<componentFamily>org.primefaces.ui</componentFamily>
+	<rendererType>org.primefaces.ui.component.LayoutUnitRenderer</rendererType>
+	<rendererClass>org.primefaces.ui.component.layout.LayoutUnitRenderer</rendererClass>
+	<parent>javax.faces.component.UIComponentBase</parent>
+	<attributes>
+		&standard_uicomponent_attributes;
+		<attribute>
+			<name>position</name>
+			<required>true</required>
+			<type>java.lang.String</type>
+			<description>Position of the unit, can be "top","bottom","center","left","right"</description>
+		</attribute>
+		<attribute>
+			<name>header</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+			<description>Header text of the unit</description>
+		</attribute>
+		<attribute>
+			<name>footer</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+			<description>Footer text of the unit</description>
+		</attribute>
+		<attribute>
+			<name>width</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+			<description>Width of the unit in pixels, applies to left and right units</description>
+		</attribute>
+		<attribute>
+			<name>height</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+			<description>Height of the unit in pixels, applies to top and bottom units</description>
+		</attribute>
+		<attribute>
+			<name>resize</name>
+			<required>false</required>
+			<type>java.lang.Boolean</type>
+			<defaultValue>false</defaultValue>
+			<description>Makes the unit resizable.</description>
+		</attribute>
+		<attribute>
+			<name>gutter</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+			<description>Specifies the gutter size which is applied before the content.</description>
+		</attribute>
+		<attribute>
+			<name>collapse</name>
+			<required>false</required>
+			<type>java.lang.Boolean</type>
+			<defaultValue>false</defaultValue>
+			<description>Makes the unit collapsable.</description>
+		</attribute>
+		<attribute>
+			<name>scroll</name>
+			<required>false</required>
+			<type>java.lang.Boolean</type>
+			<defaultValue>true</defaultValue>
+			<description>Makes the unit scrollable when content is bigger than the unit.</description>
+		</attribute>
+		<attribute>
+			<name>animate</name>
+			<required>false</required>
+			<type>java.lang.Boolean</type>
+			<defaultValue>false</defaultValue>
+			<description>Animates unit when expanding and collapsing.</description>
+		</attribute>
+	</attributes>
+</component>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE component SYSTEM "../misc/component.dtd" [
+<!ENTITY standard_uicomponent_attributes		SYSTEM "../entities/standard_uicomponent_attributes.xml">
+<!ENTITY widget_var_attribute					SYSTEM "../entities/widget_var_attribute.xml">
+]>
+<component>
+	<tag>poll</tag>
+	<tagClass>org.primefaces.ui.component.poll.PollTag</tagClass>
+	<componentClass>org.primefaces.ui.component.poll.Poll</componentClass>
+	<componentType>org.primefaces.ui.Poll</componentType>
+	<componentFamily>org.primefaces</componentFamily>
+	<rendererType>org.primefaces.ui.component.PollRenderer</rendererType>
+	<rendererClass>org.primefaces.ui.component.poll.PollRenderer</rendererClass>
+	<parent>javax.faces.component.UICommand</parent>
+	<attributes>
+		&standard_uicomponent_attributes;
+		&widget_var_attribute;
+		<attribute>
+			<name>interval</name>
+			<required>false</required>
+			<defaultValue>2</defaultValue>
+			<type>java.lang.Integer</type>
+			<description>Interval in seconds to do periodic ajax requests.</description>
+		</attribute>
+		<attribute>
+			<name>update</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+			<description>
+				Client side id of the component(s) to be updated after async partial submit request.
+			</description>
+		</attribute>
+		<attribute>
+			<name>actionListener</name>
+			<required>false</required>
+			<type>javax.faces.event.ActionListener</type>
+			<method-signature>void actionListener(javax.faces.event.ActionEvent)</method-signature>
+			<ignoreInComponent>true</ignoreInComponent>
+		</attribute>
+		<attribute>
+			<name>action</name>
+			<required>false</required>
+			<type>javax.el.MethodExpression</type>
+			<method-signature>java.lang.Object action()</method-signature>
+			<ignoreInComponent>true</ignoreInComponent>
+		</attribute>
+		<attribute>
+			<name>immediate</name>
+			<required>false</required>
+			<type>java.lang.Boolean</type>
+			<defaultValue>false</defaultValue>
+			<ignoreInComponent>true</ignoreInComponent>
+		</attribute>
+	</attributes>
+	<resources>
+		<resource>
+			<name>/jquery/jquery.js</name>
+		</resource>
+		<resource>
+			<name>/primefaces/ajax/ajax.js</name>
+		</resource>
+		<resource>
+			<name>/primefaces/poll/poll.js</name>
+		</resource>
+	</resources>
+</component>

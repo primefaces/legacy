@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE component SYSTEM "../misc/component.dtd" [
+<!ENTITY standard_uicomponent_attributes		SYSTEM "../entities/standard_uicomponent_attributes.xml">
+<!ENTITY widget_var_attribute					SYSTEM "../entities/widget_var_attribute.xml">
+<!ENTITY output_component_attributes			SYSTEM "../entities/output_component_attributes.xml">
+]>
+<component>
+	<tag>tooltip</tag>
+	<tagClass>org.primefaces.ui.component.tooltip.TooltipTag</tagClass>
+	<componentClass>org.primefaces.ui.component.tooltip.Tooltip</componentClass>
+	<componentType>org.primefaces.ui.Tooltip</componentType>
+	<componentFamily>org.primefaces</componentFamily>
+	<rendererType>org.primefaces.ui.component.TooltipRenderer</rendererType>
+	<rendererClass>org.primefaces.ui.component.tooltip.TooltipRenderer</rendererClass>
+	<parent>javax.faces.component.UIOutput</parent>
+	<attributes>
+		&standard_uicomponent_attributes;
+		&output_component_attributes;
+		&widget_var_attribute;
+		<attribute>
+			<name>showDelay</name>
+			<required>false</required>
+			<type>java.lang.Integer</type>
+			<defaultValue>200</defaultValue>
+			<description>The number of milliseconds to wait before showing a Tooltip on mouseover</description>
+		</attribute>
+		<attribute>
+			<name>hideDelay</name>
+			<required>false</required>
+			<type>java.lang.Integer</type>
+			<defaultValue>250</defaultValue>
+			<description>The number of milliseconds to wait before hiding a Tooltip on mouseover</description>
+		</attribute>
+		<attribute>
+			<name>autoDismissDelay</name>
+			<required>false</required>
+			<type>java.lang.Integer</type>
+			<defaultValue>5000</defaultValue>
+			<description>The number of milliseconds to wait before automatically dismissing a Tooltip after the mouse has been resting on the context element.</description>
+		</attribute>
+		<attribute>
+			<name>disabled</name>
+			<required>false</required>
+			<type>java.lang.Boolean</type>
+			<defaultValue>false</defaultValue>
+			<description>Enables/Disables the tooltip</description>
+		</attribute>
+	</attributes>
+	<resources>
+		<resource>
+			<name>/primefaces/tooltip/tooltip.css</name>
+		</resource>
+		<resource>
+			<name>/yui/utilities/utilities.js</name>
+		</resource>
+		<resource>
+			<name>/yui/container/container-min.js</name>
+		</resource>
+	</resources>
+</component>

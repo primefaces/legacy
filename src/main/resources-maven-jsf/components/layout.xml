@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE component SYSTEM "../misc/component.dtd" [
+<!ENTITY standard_uicomponent_attributes		SYSTEM "../entities/standard_uicomponent_attributes.xml">
+<!ENTITY widget_var_attribute					SYSTEM "../entities/widget_var_attribute.xml">
+]>
+<component>
+	<tag>layout</tag>
+	<tagClass>org.primefaces.ui.component.layout.LayoutTag</tagClass>
+	<componentClass>org.primefaces.ui.component.layout.Layout</componentClass>
+	<componentType>org.primefaces.ui.Layout</componentType>
+	<componentFamily>org.primefaces.ui</componentFamily>
+	<rendererType>org.primefaces.ui.component.LayoutRenderer</rendererType>
+	<rendererClass>org.primefaces.ui.component.layout.LayoutRenderer</rendererClass>
+	<parent>javax.faces.component.UIPanel</parent>
+	<attributes>
+		&standard_uicomponent_attributes;
+		&widget_var_attribute;
+		<attribute>
+			<name>fullPage</name>
+			<required>false</required>
+			<type>java.lang.Boolean</type>
+			<defaultValue>false</defaultValue>
+			<description>Specifies if the layout will be created for whole page.</description>
+		</attribute>
+		<attribute>
+			<name>width</name>
+			<required>false</required>
+			<type>java.lang.Integer</type>
+			<defaultValue>java.lang.Integer.MIN_VALUE</defaultValue>
+			<description>Width in pixels.</description>
+		</attribute>
+		<attribute>
+			<name>height</name>
+			<required>false</required>
+			<type>java.lang.Integer</type>
+			<defaultValue>java.lang.Integer.MIN_VALUE</defaultValue>
+			<description>Height in pixels.</description>
+		</attribute>
+		<attribute>
+			<name>minWidth</name>
+			<required>false</required>
+			<type>java.lang.Integer</type>
+			<defaultValue>java.lang.Integer.MIN_VALUE</defaultValue>
+			<description>Minimum width in pixels.</description>
+		</attribute>
+		<attribute>
+			<name>minHeight</name>
+			<required>false</required>
+			<type>java.lang.Integer</type>
+			<defaultValue>java.lang.Integer.MIN_VALUE</defaultValue>
+			<description>Minimum height in pixels.</description>
+		</attribute>
+	</attributes>
+	<resources>
+		<resource>
+			<name>/yui/reset-fonts-grids/reset-fonts-grids.css</name>
+		</resource>
+		<resource>
+			<name>/yui/assets/skins/sam/resize.css</name>
+		</resource>
+		<resource>
+			<name>/yui/layout/assets/skins/sam/layout.css</name>
+		</resource>
+		<resource>
+			<name>/yui/utilities/utilities.js</name>
+		</resource>
+		<resource>
+			<name>/yui/resize/resize-min.js</name>
+		</resource>
+		<resource>
+			<name>/yui/layout/layout-min.js</name>
+		</resource>
+	</resources>
+</component>
