@@ -53,7 +53,7 @@ public class MessagesRenderer extends CoreRenderer {
 		
 		writer.startElement("div", uiMessages);
 		writer.writeAttribute("id", uiMessages.getClientId(facesContext), "id");
-		writer.writeAttribute("class", "ui-messages ui-widget", null);
+		writer.writeAttribute("class", "pf-messages", null);
 		
 		for(String severity : messages.keySet()) {
 			List<FacesMessage> severityMessages = messages.get(severity);
@@ -67,10 +67,10 @@ public class MessagesRenderer extends CoreRenderer {
 
 	private void encodeSeverityMessages(FacesContext facesContext, Messages uiMessages, String severity, List<FacesMessage> messages) throws IOException {
 		ResponseWriter writer = facesContext.getResponseWriter();
-		String styleClassPrefix = "ui-messages-" + severity;
+		String styleClassPrefix = "pf-messages-" + severity;
 		
 		writer.startElement("div", null);
-		writer.writeAttribute("class", styleClassPrefix + " ui-corner-all", null);
+		writer.writeAttribute("class", styleClassPrefix, null);
 		
 		writer.startElement("span", null);
 		writer.writeAttribute("class", styleClassPrefix + "-icon", null);

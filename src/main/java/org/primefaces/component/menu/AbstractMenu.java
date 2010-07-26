@@ -26,15 +26,11 @@ public abstract class AbstractMenu extends UIComponentBase {
 		MenuModel model = (MenuModel) getModel();
 		
 		if(model != null) {
-			for(UIComponent kid : model.getSubmenus()) {
-				kid.setTransient(true);
+			for(UIComponent kid : model.getSubmenus())
 				getChildren().add(kid);
-			}
 			
-			for(UIComponent kid : model.getMenuItems()) {
-				kid.setTransient(true);
+			for(UIComponent kid : model.getMenuItems())
 				getChildren().add(kid);
-			}
 		}
 	}
 	

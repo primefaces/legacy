@@ -39,17 +39,6 @@ public class ResourcesRenderer extends CoreRenderer {
 		
 		writer.write("\n");
 		
-		//Skin
-        String skin = facesContext.getExternalContext().getInitParameter("primefaces.skin");
-        if(skin == null) {
-        	skin = "sam";	//default
-        }
-        
-        if(!skin.equalsIgnoreCase("none")) {
-        	String path = "/skins/" + skin + "/skin.css";
-        	renderCSSDependency(facesContext, path);
-        }
-		
 		for(String resource : resourceQueue.getResources()) {
 			if(isResourceExcluded(excludedResources, resource))
 				continue;

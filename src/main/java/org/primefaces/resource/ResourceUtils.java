@@ -20,7 +20,7 @@ import javax.faces.context.FacesContext;
 
 public class ResourceUtils {
 
-	public final static String VERSION_INFO = "/1.1";
+	public final static String VERSION_INFO = "/1.0.2";
 	public final static String RESOURCE_FOLDER = "/META-INF/resources";
 	public final static String RESOURCE_PATTERN = "/primefaces_resource";
 	public final static String RESOURCE_VERSION_PATTERN = RESOURCE_PATTERN + VERSION_INFO;
