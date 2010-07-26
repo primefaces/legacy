@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!--
+		/* * Licensed to the Apache Software Foundation (ASF) under one * or
+		more contributor license agreements. See the NOTICE file * distributed
+		with this work for additional information * regarding copyright
+		ownership. The ASF licenses this file * to you under the Apache
+		License, Version 2.0 (the * "License"); you may not use this file
+		except in compliance * with the License. You may obtain a copy of the
+		License at * * http://www.apache.org/licenses/LICENSE-2.0 * * Unless
+		required by applicable law or agreed to in writing, * software
+		distributed under the License is distributed on an * "AS IS" BASIS,
+		WITHOUT WARRANTIES OR CONDITIONS OF ANY * KIND, either express or
+		implied. See the License for the * specific language governing
+		permissions and limitations * under the License. */ //
+	-->
+
+<!DOCTYPE component SYSTEM "../misc/component.dtd" [
+<!ENTITY standard_uicomponent_attributes		SYSTEM "../entities/standard_uicomponent_attributes.xml">
+<!ENTITY widget_var_attribute					SYSTEM "../entities/widget_var_attribute.xml">
+]>
+<component>
+	<tag>barChart</tag>
+	<tagClass>org.primefaces.ui.component.chart.bar.BarChartTag</tagClass>
+	<componentClass>org.primefaces.ui.component.chart.bar.BarChart</componentClass>
+	<componentType>org.primefaces.ui.chart.BarChart</componentType>
+	<componentFamily>org.primefaces</componentFamily>
+	<rendererType>org.primefaces.ui.component.chart.BarChartRenderer</rendererType>
+	<rendererClass>org.primefaces.ui.component.chart.bar.BarChartRenderer</rendererClass>
+	<parent>javax.faces.component.UIComponentBase</parent>
+	<attributes>
+		&standard_uicomponent_attributes;
+		&widget_var_attribute;
+		<attribute>
+			<name>value</name>
+			<required>true</required>
+			<type>java.lang.Object</type>
+			<description>Data to be displayed on the chart</description>
+		</attribute>
+		<attribute>
+			<name>var</name>
+			<required>true</required>
+			<type>java.lang.String</type>
+			<description>Name of the data iterator</description>
+		</attribute>
+		<attribute>
+			<name>yfield</name>
+			<required>false</required>
+			<type>java.lang.Object</type>
+			<description>Field for the y axis</description>
+		</attribute>
+		<attribute>
+			<name>styleClass</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+			<description>Style to apply to chart container element.</description>
+		</attribute>
+		<attribute>
+			<name>style</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+			<description>Javascript object that represents the chart style</description>
+		</attribute>
+	</attributes>
+	<resources>
+		<resource>
+			<name>/yui/utilities/utilities.js</name>
+		</resource>
+		<resource>
+			<name>/yui/datasource/datasource-min.js</name>
+		</resource>
+		<resource>
+			<name>/yui/json/json-min.js</name>
+		</resource>
+		<resource>
+			<name>/yui/charts/charts-experimental-min.js</name>
+		</resource>
+	</resources>
+</component>

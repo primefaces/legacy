@@ -3,13 +3,12 @@
 	<required>false</required>
 	<type>java.lang.String</type>
 	<ignoreInComponent>true</ignoreInComponent>
-	<literal>true</literal>
 	<description>Id of the component</description>
 </attribute>
 <attribute>
 	<name>rendered</name>
 	<required>false</required>
-	<type>java.lang.Boolean</type>
+	<type>boolean</type>
 	<ignoreInComponent>true</ignoreInComponent>
 	<description>
 		Boolean value to specify the visibility of the component
@@ -18,7 +17,7 @@
 <attribute>
 	<name>binding</name>
 	<required>false</required>
-	<type>javax.faces.component.UIComponent</type>
+	<type>java.lang.String</type>
 	<ignoreInComponent>true</ignoreInComponent>
 	<description>
 		An EL expression that maps to a server-side component instance

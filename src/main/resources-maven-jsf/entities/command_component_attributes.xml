@@ -13,14 +13,12 @@
 	<name>actionListener</name>
 	<required>false</required>
 	<type>javax.faces.event.ActionListener</type>
-	<method-signature>void actionListener(javax.faces.event.ActionEvent)</method-signature>
 	<ignoreInComponent>true</ignoreInComponent>
 </attribute>
 <attribute>
 	<name>action</name>
 	<required>false</required>
 	<type>javax.el.MethodExpression</type>
-	<method-signature>java.lang.Object action()</method-signature>
 	<ignoreInComponent>true</ignoreInComponent>
 </attribute>
 <attribute>

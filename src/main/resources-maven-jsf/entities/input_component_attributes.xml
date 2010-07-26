@@ -2,7 +2,7 @@
 <attribute>
 	<name>immediate</name>
 	<required>false</required>
-	<type>java.lang.Boolean</type>
+	<type>boolean</type>
 	<ignoreInComponent>true</ignoreInComponent>
 	<description>
 		Boolean value that specifies the lifecycle phase the
@@ -15,7 +15,7 @@
 <attribute>
 	<name>required</name>
 	<required>false</required>
-	<type>java.lang.Boolean</type>
+	<type>boolean</type>
 	<ignoreInComponent>true</ignoreInComponent>
 	<description>
 		Boolean value that makes the component required, default value
@@ -37,7 +37,6 @@
 	<required>false</required>
 	<type>javax.faces.event.ValueChangeListener</type>
 	<ignoreInComponent>true</ignoreInComponent>
-	<method-signature>void valueChange(javax.faces.event.ValueChangeEvent)</method-signature>
 	<description>
 		A method binding EL expression that refers to a method for
 		handling a value change event
