@@ -51,7 +51,7 @@ public class MessageRenderer extends CoreRenderer {
 			else if(severity.equals(FacesMessage.SEVERITY_WARN)) severityKey = "warn";
 			else if(severity.equals(FacesMessage.SEVERITY_FATAL))  severityKey = "fatal";
 				
-			writer.writeAttribute("class", "ui-message-" + severityKey + " ui-widget ui-corner-all", null);
+			writer.writeAttribute("class", "pf-message-" + severityKey, null);
 			
 			if(message.isShowSummary())
 				encodeMessageText(writer, msg.getSummary(), severityKey + "-summary");
@@ -65,7 +65,7 @@ public class MessageRenderer extends CoreRenderer {
 	
 	private void encodeMessageText(ResponseWriter writer, String text, String severity) throws IOException {
 		writer.startElement("span", null);
-		writer.writeAttribute("class", "ui-message-" + severity, null);
+		writer.writeAttribute("class", "pf-message-" + severity, null);
 		writer.write(text);
 		writer.endElement("span");
 	}
